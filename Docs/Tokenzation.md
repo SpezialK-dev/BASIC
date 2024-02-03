@@ -14,14 +14,35 @@ Der Grund warum ich mich gegen einen INT entschieden habe ist, da er mir viel zu
 
 Ansonsten besteht immernoch die Möglichkeit denn variabeln raum zu verkleinern, das ist aber etwas was ich wirklich ungern machen würde. 
 
+### Translation Table design
+
+Hier werden wir starke inspiration von der Werte Tabelle von Atari verwenden (Seite 22 in dem PDF Dokument oder 8 in Buch)
+
+DEZ     HEX     ERKLÄRUNG
+
+0-13    00-0D   Unused
+
+14      OE      Floating Point Numeric Constant. The next six bytes will hold its value.
+
+15      OF      String Constant.The next byte is the string length. A string of that length follows .
+
+16-60   10-3C   Operators. See table starting at $A7E3 for specific operators and values.
+
+61-84   3D-54   Functions. See table starting at $A820 for specific functions and values.
+
+85-127  55-7F   Unused. 
+
+128-255 80-FF   Variables.
+
+ich werde mich für das Erste auch an diesen Plan halten, da ich es mir hilft wenn man andere code teile beachten will und keine umrechnungen stattfinden müssen und kein umdenken von denn Instruktionen in dem ATARI BASIC buch. 
 ### Generelle Idee zum Ablauf
 
 Hierfür wurde die Zeilennummer schon im Vorhinein aus dem Array entfernt.
 
 1. CHAR Array wird eingegeben. 
 2. Herausfiltern von denn verschiedenen Wörtern
-
-
+3. Der token wird gesucht 
+4. Token wird in ein weiteres Array reingeschrieben, welches dann zurück gegeben wird.
 
 
 #### kleiner exkurs zur Spaces in code
@@ -34,4 +55,10 @@ Als Beispiel
 
 > XANDZ würde immer als AND erkannt werden, dies denke ich mal könnte variabel namen probleme geben. 
 
-Mein AKtueller ansatz besteht daraus bei spaces zu trennen und dann immer die wörter/ elemente zwischen spaces zu classifizieren, dies sollte Deutlich weniger Probleme erstellen im endefekt. 
+Mein Aktueller ansatz besteht daraus bei spaces zu trennen und dann immer die wörter/ elemente zwischen spaces zu klassifizieren, dies sollte Deutlich weniger Probleme erstellen im Endefekt. 
+
+dadurch kann ich einen deutlich effizienteres verfahren nutzten im elemente zu finden. Undzwar kann ich einfach ein Suchverfahren in einer Sortierten Liste anwenden. Da Mein plan ist, alle Elemente sowohl bei den Variabeln als auch bei Funktionsnamen alphabetisch sortier zu haben, damit man durch sie sehr effizient suchen kann. Dies sollte das Zuordnen relativ schnell machen, wobei ich auch eventuell noch andere Sachen ausprobieren werde. 
+
+
+### Verantwortliche Klassen
+ 
