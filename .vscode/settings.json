@@ -74,5 +74,12 @@
         "valarray": "cpp",
         "variant": "cpp"
     },
-    "makefile.makefilePath": "./BASIC/makefile"
+    "makefile.makefilePath": "makefile",
+    "makefile.launchConfigurations": [
+        {
+            "cwd": "/home/spezialk/data/code/c++/BASIC",
+            "binaryPath": "/home/spezialk/data/code/c++/BASIC/a.out",
+            "binaryArgs": []
+        }
+    ]
 }

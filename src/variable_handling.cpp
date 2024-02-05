@@ -1,3 +1,5 @@
+#include <ctype.h>
+
 class variable_handling
 {
 private:
@@ -30,6 +32,13 @@ void variable_handling::create_new_variable(char  name[], char value[]){
 
   
     // value stuff : 
+
+    // type detection
+    if(isdigit(value[0])){
+
+    }else if(value[0] == '"' | isalpha(value[1])){
+        
+    }
 }
 // returns pointer to char array of that type,
 // token is the token give by the tokenzier, this is needed for things like scrolleback

@@ -35,6 +35,7 @@ DEZ     HEX     ERKLÄRUNG
 128-255 80-FF   Variables.
 
 ich werde mich für das Erste auch an diesen Plan halten, da ich es mir hilft wenn man andere code teile beachten will und keine umrechnungen stattfinden müssen und kein umdenken von denn Instruktionen in dem ATARI BASIC buch. 
+
 ### Generelle Idee zum Ablauf
 
 Hierfür wurde die Zeilennummer schon im Vorhinein aus dem Array entfernt.
@@ -61,4 +62,5 @@ dadurch kann ich einen deutlich effizienteres verfahren nutzten im elemente zu f
 
 
 ### Verantwortliche Klassen
- 
+
+#### 

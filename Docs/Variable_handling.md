@@ -46,3 +46,8 @@ char last_numb = 0;
 
 
 Später kann man das effizienter machen, indem man die Sache alphabetisch sortiert und somit den zugriff eventuell schneller macht
+
+#### Type detection
+Hierbei wird der erste wert überprüft ob es eine String oder eine ein Int
+
+#### Eigene Klasse für Datentypen
