@@ -15,6 +15,8 @@ Merkmale
 
 - Speicher C style Arrays ab um portabler zu sein, desweiterem sind es dann "NUR" mehrdimensionale Arrays was beim programmieren hilft.
 - es gibt insgesamt 128 Variabel und die dürfen eine namenslänge von 20 Zeichen haben dabei wird der rest wegeworfen und einfach ignoriert.
+- wenn etwas überschrieben wurde dann hat es denn charackter ' ', weil leehrzeichen rausgefiltert werden sollten bevor sie weitergegeben werden an das Speichern von Variabeln
+- Das erste element eines String muss ' ' sein um als leer zu zählen
 
 ### Wertespeicher
 wir machen uns es wie python zu nutzten und und haben nur eine Array an pointern, Da c++ kein garbage collector hat, sollte es reichen, wenn ich variabeln erstelle auf diese einen pointer. Das erlaubt es uns selbst arrays zu speichern. 
@@ -33,3 +35,14 @@ Die klasse kann in der selben Datei gespeichert werden, da es an sich keinen unt
 werden wir in create new variable handeln
 
 wir allokieren memory mit new keyword für den wert, nachdem wir denn Typen festgestellt haben. 
+
+
+#### platzierung des items im array 
+
+Für das erste werden wir einfach nur denn höchsten wert nehemen um eine variable zu finden
+
+Zuständliche variabeln 
+char last_numb = 0;
+
+
+Später kann man das effizienter machen, indem man die Sache alphabetisch sortiert und somit den zugriff eventuell schneller macht
