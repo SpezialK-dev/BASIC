@@ -15,8 +15,9 @@ Merkmale
 
 - Speicher C style Arrays ab um portabler zu sein, desweiterem sind es dann "NUR" mehrdimensionale Arrays was beim programmieren hilft.
 - es gibt insgesamt 128 Variabel und die dürfen eine namenslänge von 20 Zeichen haben dabei wird der rest wegeworfen und einfach ignoriert.
-- wenn etwas überschrieben wurde dann hat es denn charackter ' ', weil leehrzeichen rausgefiltert werden sollten bevor sie weitergegeben werden an das Speichern von Variabeln
-- Das erste element eines String muss ' ' sein um als leer zu zählen
+- wenn etwas überschrieben wurde dann hat es denn Wert 0 wenn man es als int vergleicht.
+- Damit etwas als leer erkannt muss index 0 denn int wert 0 haben
+
 
 ### Wertespeicher
 wir machen uns es wie python zu nutzten und und haben nur eine Array an pointern, Da c++ kein garbage collector hat, sollte es reichen, wenn ich variabeln erstelle auf diese einen pointer. Das erlaubt es uns selbst arrays zu speichern. 
