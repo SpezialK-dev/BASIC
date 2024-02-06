@@ -1,13 +1,14 @@
 class variable_handling
 {
 private:
-    char variable_names[128][21]={""};
+    unsigned char variable_names[128][21]={""};
     void* value_array[128]; 
-    char find_space_in_variable(char *name);
-    char last_elem = 0; 
+    unsigned char find_space_in_variable(unsigned char *name);
+    unsigned char last_elem = 0; 
 public:
-    void create_new_variable(char  name[], char value[]);
-    char& get_variable_name(char token);
-    void* get_value(char token);
-    void delete_variabel(char token);
+    void create_new_variable(unsigned char  name[], unsigned char value[]);
+    unsigned char& get_variable_name(unsigned char token);
+    void* get_value(unsigned char token);
+    void delete_variabel(unsigned char token);
+
 };
