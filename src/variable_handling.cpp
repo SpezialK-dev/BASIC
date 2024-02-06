@@ -1,6 +1,5 @@
 #include <ctype.h>
 #include <iostream>
-#include <ostream>
 
 class variable_handling
 {
@@ -22,6 +21,7 @@ public:
 //creation of new variable
 // does not return anything might return a statuscode in the future as a char.
 void variable_handling::create_new_variable(unsigned char  name[], unsigned char value[]){
+  std::cout << "space: " <<int(find_space_in_variable(name))<< std::endl;
   //name array stuff:
   // copying name
   unsigned char working_index = find_space_in_variable(name);
@@ -69,7 +69,8 @@ unsigned char& variable_handling::get_variable_name(unsigned char token){
  
 //should just return the value of the array at the point of the token
 void* variable_handling::get_value(unsigned char token){
-   return &value_array[token];
+  std::cout << "MEM Return : " << value_array[token]<< std::endl;
+  return value_array[token];
 }
  
 // returns nothing 
