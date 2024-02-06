@@ -1,4 +1,5 @@
 #include <ctype.h>
+#include <iostream>
 
 class variable_handling
 {
@@ -20,8 +21,6 @@ public:
 //creation of new variable
 // does not return anything might return a statuscode in the future as a char.
 void variable_handling::create_new_variable(char  name[], char value[]){
-      //incrementing last used objekt 
-    ++last_elem;
     //name array stuff:
     // copying name
     char working_index = find_space_in_variable(name);
@@ -34,10 +33,22 @@ void variable_handling::create_new_variable(char  name[], char value[]){
     // value stuff : 
 
     // type detection
-    if(isdigit(value[0])){
+    // first 2 values are checked in case its a special value like a string or a float
+    if(isdigit(value[0] | isdigit(value[1]))){
+      //floating point stuff
+      if(value[0] == 14){
+	//floating creation code
 
-    }else if(value[0] == '"' | isalpha(value[1])){
-        
+      } 
+      else{
+	
+      }
+    }else if(value[0] == 15 | isalpha(value[1])){
+      //String code
+    }
+    //increment last used objekt counter by 1
+    if(last_elem != 255){
+    ++last_elem;
     }
 }
 // returns pointer to char array of that type,
@@ -56,17 +67,24 @@ void* variable_handling::get_value(char token){
 void variable_handling::delete_variabel(char token){
     //name array stuff:
     for(int i = 0; i< 19; ++i){
-        variable_names[token][i] = ' ';
+        variable_names[token][i] = 0;
     };
 
     //todo copy stuff forwards
-    while(variable_names[token+1][0] != ' '){
+    while(variable_names[token+1][0] != 0){
         for(int i = 0; i < 19; ++i){
-            variable_names[token][i] = variable_names[token+1][i];
-        }
+	  variable_names[token][i] = variable_names[token+1][i];
+	  }
         ++token;
-    }
+	
+	}
     // value array stuff :
+
+
+    //decrementing bc. we reduced size by 1
+    if(last_elem !=0){
+      --last_elem;
+    }
 }
 
 //might be replaced in the future so thats why name is in there but for now a slow 
