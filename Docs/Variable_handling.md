@@ -49,6 +49,21 @@ char last_numb = 0;
 Später kann man das effizienter machen, indem man die Sache alphabetisch sortiert und somit den zugriff eventuell schneller macht
 
 #### Type detection
-Hierbei wird der erste wert überprüft ob es eine String oder eine ein Int
+
+klene Feinheiten. Strings können mommentan keine ints an erster Stelle enthalten!!!
+also "1,2" wird nicht als string aufgefasst sondern als int!!!
+Dies kann sich in der Zukunft noch ändern
+
+Grober Ablauf Type detection
+1. Festellen Nummer oder String?
+2. Nummer
+   2.1 Floating Point number oder nicht?
+
+um bei zahlen umzuwandeln subtrahieren wir mit dem char '0' und geben als ausgabe typ einen int an, dann funktioniert es. Ansonstne nicht!!
+##### Typenumwandlung
+
+###### INT
+
+Wir iterieren durch das array und multiplizieren denn vorwert mit 10 und addieren unsere aktuelle zahl hinzu egal, wie viele 0 wir davor haben es wird funtkionieren
 
 #### Eigene Klasse für Datentypen

@@ -34,7 +34,7 @@ DEZ     HEX     ERKLÄRUNG
 
 128-255 80-FF   Variables.
 
-ich werde mich für das Erste auch an diesen Plan halten, da ich es mir hilft wenn man andere code teile beachten will und keine umrechnungen stattfinden müssen und kein umdenken von denn Instruktionen in dem ATARI BASIC buch. 
+ich werde mich für das Erste auch an diesen Plan halten, da ich es mir hilft wenn man andere code teile beachten will und keine umrechnungen stattfinden müssen und kein umdenken von denn Instruktionen in dem ATARI BASIC  
 
 ### Generelle Idee zum Ablauf
 
