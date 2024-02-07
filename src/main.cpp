@@ -30,7 +30,7 @@ int main(){
     return_test =  v.get_variable_name(0);
     return_test2 =v.get_variable_name(1);
     return_var_test = static_cast<int*>(v.get_value(0));
-    std::cout << return_test << "::"<< return_var_test <<"," << return_test2 << std::endl;
+    std::cout << return_test << "::"<< *return_var_test <<"," << return_test2 << std::endl;
 
     // testing delete Statment
     v.delete_variabel(0);

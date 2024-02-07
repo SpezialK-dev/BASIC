@@ -7,7 +7,7 @@ private:
     //128 Variable names
     //20 char max lenght rest ist discarded
     unsigned char variable_names[128][21]={""};
-    void* value_array[128]; 
+    void *value_array[128]; 
     unsigned char find_space_in_variable(unsigned char *name);
     unsigned char last_elem = 0; 
 public:
@@ -49,9 +49,7 @@ void variable_handling::create_new_variable(unsigned char  name[], unsigned char
 	      }
 
 	      //getting space and putting variable on stack
-	      int* P_int_var_tabel = new int(result);
-	      std::cout << "Mem Adress: " << P_int_var_tabel<< std::endl;
-	      value_array[working_index] = &P_int_var_tabel;
+	      value_array[working_index] = new int(result);
       }
     }else if(value[0] == 15 || isalpha(value[1])){
       //String code
@@ -69,7 +67,6 @@ unsigned char& variable_handling::get_variable_name(unsigned char token){
  
 //should just return the value of the array at the point of the token
 void* variable_handling::get_value(unsigned char token){
-  std::cout << "MEM Return : " << value_array[token]<< std::endl;
   return value_array[token];
 }
  
