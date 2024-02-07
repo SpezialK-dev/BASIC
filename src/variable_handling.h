@@ -1,8 +1,10 @@
+#include "b_var.h"
+
 class variable_handling
 {
 private:
-    unsigned char variable_names[128][21]={""};
-    void* value_array[128]; 
+    
+    b_var* variables[128];
     unsigned char find_space_in_variable(unsigned char *name);
     unsigned char last_elem = 0; 
 public:

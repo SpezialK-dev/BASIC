@@ -1,7 +1,6 @@
 #include <iostream>
 #include <iomanip> // needed for setw
-#include "varianle_handling.h"
-
+#include "variable_handling.h"
 
 //can get a max of 255 bytes of input so 255 char array?
 //for now I will use this since, this is the amount of Chars that where possible in atari basic
@@ -27,14 +26,14 @@ int main(){
     unsigned char* return_test;
     unsigned char* return_test2;
     int* return_var_test;
-    return_test =  v.get_variable_name(0);
-    return_test2 =v.get_variable_name(1);
-    return_var_test = static_cast<int*>(v.get_value(0));
-    std::cout << return_test << "::"<< *return_var_test <<"," << return_test2 << std::endl;
+    //return_test =  v.get_variable_name(0);
+    //return_test2 =v.get_variable_name(1);
+    //return_var_test = static_cast<int*>(v.get_value(0));
+    //std::cout << return_test << "::"<< *return_var_test <<"," << return_test2 << std::endl;
     
     // testing delete Statment
-    v.delete_variabel(0);
-    return_test = v.get_variable_name(0);
-    std::cout << return_test << std::endl;
+    //v.delete_variabel(0);
+    //return_test = v.get_variable_name(0);
+    //std::cout << return_test << std::endl;
 }
 

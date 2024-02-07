@@ -1,22 +1,7 @@
 #include <ctype.h>
-#include "b_var.h"
+#include "variable_handling.h"
 
 
-class variable_handling
-{
-private:
-    //128 Variable names
-    //20 char max lenght rest ist discarded
-    b_var* variables[128];
-    unsigned char find_space_in_variable(unsigned char *name);
-    unsigned char last_elem = 0; 
-public:
-    void create_new_variable(unsigned char  name[], unsigned char value[]);
-    unsigned char* get_variable_name(unsigned char token);
-    void* get_value(unsigned char token);
-    void delete_variabel(unsigned char token);
-
-};
 
 //creation of new variable
 // does not return anything might return a statuscode in the future as a char.
