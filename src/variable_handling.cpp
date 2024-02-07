@@ -14,7 +14,6 @@ void variable_handling::create_new_variable(unsigned char  name[], unsigned char
 
     if(value[0] == 14){
 	    //floating creation code
-
     } 
     else{
 	      // I have to go to the max input char limit ? Because theoretically it could be so long 
@@ -31,6 +30,8 @@ void variable_handling::create_new_variable(unsigned char  name[], unsigned char
       }
     }else if(value[0] == 15 || isalpha(value[1])){
       //String code
+      //still does not save string contents
+      variables[working_index] = new b_var(name, new unsigned char(3), new char[20]{});
     }
     //increment last used objekt counter by 1
     if(last_elem != 255){

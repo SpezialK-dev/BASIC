@@ -21,7 +21,7 @@ int main(){
     unsigned char test2[20]{"Goodbye World"};
     unsigned char test_v[10]{"123"};
     v.create_new_variable(test,test_v);
-    v.create_new_variable(test2,test_v);
+    v.create_new_variable(test2,test);
     //testing return values
     unsigned char* return_test;
     unsigned char* return_test2;
