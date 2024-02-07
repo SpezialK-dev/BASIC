@@ -25,13 +25,24 @@ void variable_handling::create_new_variable(unsigned char  name[], unsigned char
 
 
 	      //getting space and putting variable on stack
-    
+        
 	      variables[working_index] = new b_var(name, new unsigned char(1), new int(result));
       }
     }else if(value[0] == 15 || isalpha(value[1])){
       //String code
       //still does not save string contents
-      variables[working_index] = new b_var(name, new unsigned char(3), new char[20]{});
+      //following problems might have problems getting freed after pointer deletion?
+      char* char_pointer = new char[20];
+      for(int i = 0; i < 120; ++i){
+        if(value[i] == '\0'){
+          *(char_pointer+i) = '\0'; 
+          break;
+        }
+        *(char_pointer+i) = value[i];
+      }
+      *(char_pointer+120) = '\0';  
+      
+      variables[working_index] = new b_var(name, new unsigned char(3), char_pointer);
     }
     //increment last used objekt counter by 1
     if(last_elem != 255){

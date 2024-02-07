@@ -59,11 +59,27 @@ Grober Ablauf Type detection
 2. Nummer
    2.1 Floating Point number oder nicht?
 
-um bei zahlen umzuwandeln subtrahieren wir mit dem char '0' und geben als ausgabe typ einen int an, dann funktioniert es. Ansonstne nicht!!
-##### Typenumwandlung
 
+###### Tyen klassifizierung 
+wenn man get_type von b_var aufruft bekommt man  einen char zurück, diesen muss man in einen int wie folgt umwandeln "int(*type)" wenn man ihn anzeigen will in cout.
+
+Rauskommende Werte haben folgende Bedeutungen
+
+0 = undefined
+
+1 = int
+
+2 = Float
+
+3 = String
+
+
+##### Typenumwandlung
+um bei zahlen umzuwandeln subtrahieren wir mit dem char '0' und geben als ausgabe typ einen int an, dann funktioniert es. Ansonstne nicht!!
 ###### INT
 
 Wir iterieren durch das array und multiplizieren denn vorwert mit 10 und addieren unsere aktuelle zahl hinzu egal, wie viele 0 wir davor haben es wird funtkionieren
 
-#### Eigene Klasse für Datentypen
+##### Wichtige Informationen bei dem Returns.
+
+Bei Strings wird nur ein Pointer zu dem String returned, dabei ist zu beachten, dass man manuell durchiterieren muss er wird leider 
