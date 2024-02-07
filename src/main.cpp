@@ -24,14 +24,14 @@ int main(){
     v.create_new_variable(test,test_v);
     v.create_new_variable(test2,test_v);
     //testing return values
-    unsigned char return_test;
-    unsigned char return_test2;
+    unsigned char* return_test;
+    unsigned char* return_test2;
     int* return_var_test;
     return_test =  v.get_variable_name(0);
     return_test2 =v.get_variable_name(1);
     return_var_test = static_cast<int*>(v.get_value(0));
     std::cout << return_test << "::"<< *return_var_test <<"," << return_test2 << std::endl;
-
+    
     // testing delete Statment
     v.delete_variabel(0);
     return_test = v.get_variable_name(0);

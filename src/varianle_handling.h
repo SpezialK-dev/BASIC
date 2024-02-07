@@ -7,7 +7,7 @@ private:
     unsigned char last_elem = 0; 
 public:
     void create_new_variable(unsigned char  name[], unsigned char value[]);
-    unsigned char& get_variable_name(unsigned char token);
+    unsigned char* get_variable_name(unsigned char token);
     void* get_value(unsigned char token);
     void delete_variabel(unsigned char token);
 

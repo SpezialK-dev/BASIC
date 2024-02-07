@@ -1,5 +1,4 @@
 #include <ctype.h>
-#include <iostream>
 
 class variable_handling
 {
@@ -12,7 +11,7 @@ private:
     unsigned char last_elem = 0; 
 public:
     void create_new_variable(unsigned char  name[], unsigned char value[]);
-    unsigned char& get_variable_name(unsigned char token);
+    unsigned char* get_variable_name(unsigned char token);
     void* get_value(unsigned char token);
     void delete_variabel(unsigned char token);
 
@@ -21,7 +20,6 @@ public:
 //creation of new variable
 // does not return anything might return a statuscode in the future as a char.
 void variable_handling::create_new_variable(unsigned char  name[], unsigned char value[]){
-  std::cout << "space: " <<int(find_space_in_variable(name))<< std::endl;
   //name array stuff:
   // copying name
   unsigned char working_index = find_space_in_variable(name);
@@ -32,13 +30,13 @@ void variable_handling::create_new_variable(unsigned char  name[], unsigned char
   
 
   // value stuff : 
-  std::cout <<"isDigit: " << isdigit(value[0]) << " valueItself : " << value[0] <<  std::endl;
   // type detection
   // first 2 values are checked in case its a special value like a string or a float
   if(bool(isdigit(value[0])) || bool(isdigit(value[1]))){
 
     if(value[0] == 14){
 	    //floating creation code
+
     } 
     else{
 	      // I have to go to the max input char limit ? Because theoretically it could be so long 
@@ -61,8 +59,8 @@ void variable_handling::create_new_variable(unsigned char  name[], unsigned char
 }
 // returns pointer to char array of that type,
 // token is the token give by the tokenzier, this is needed for things like scrolleback
-unsigned char& variable_handling::get_variable_name(unsigned char token){
-     return *variable_names[token];
+unsigned char* variable_handling::get_variable_name(unsigned char token){
+     return variable_names[token];
 }
  
 //should just return the value of the array at the point of the token
