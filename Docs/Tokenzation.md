@@ -62,5 +62,3 @@ dadurch kann ich einen deutlich effizienteres verfahren nutzten im elemente zu f
 
 
 ### Verantwortliche Klassen
-
-#### 

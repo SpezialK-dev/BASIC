@@ -1,4 +1,4 @@
-#include <ctype.h>
+#include "ctype.h"
 #include "variable_handling.h"
 
 
@@ -14,6 +14,31 @@ void variable_handling::create_new_variable(unsigned char  name[], unsigned char
 
     if(value[0] == 14){
 	    //floating creation code
+	    //floating creation code
+      int first_float_part = 0 ;
+      int last_float_part = 0;
+      int point_in_float = 0;
+      int counter_after_point_f = 0;//would like to solve this in another way but I have no clue
+      //copying everything before , or . 
+      for(int i = 1; i< 120 ; i++){
+          if(value[i] == '\0' || value[i] == 0){break;}
+          if(value[i] == '.' || value[i] == ','){
+            point_in_float = i;
+            break;
+          }
+	        first_float_part = first_float_part * 10 + (value[i]- '0');
+      }
+      //copying part behind the . or , to a new int
+      for(point_in_float+1; point_in_float< 120; ++point_in_float){
+	      if(value[point_in_float] == '\0' || value[point_in_float] == 0){break;}
+	      last_float_part = last_float_part * 10 + (value[point_in_float]- '0');
+        //counter to see how many numbers we have after the . 
+        ++counter_after_point_f;
+
+	    }
+      float result = float(first_float_part) + (float(last_float_part)/10*counter_after_point_f);
+      variables[working_index] = new b_var(name, new unsigned char(1), new float{result});
+
     } 
     else{
 	      // I have to go to the max input char limit ? Because theoretically it could be so long 
@@ -34,12 +59,14 @@ void variable_handling::create_new_variable(unsigned char  name[], unsigned char
       //following problems might have problems getting freed after pointer deletion?
       char* char_pointer = new char[20];
       for(int i = 0; i < 120; ++i){
+        //safty net if string terminates before lenght
         if(value[i] == '\0'){
           *(char_pointer+i) = '\0'; 
           break;
         }
         *(char_pointer+i) = value[i];
       }
+      // if string terminates after that. this SHOULD be in range and stop things from ending badly
       *(char_pointer+120) = '\0';  
       
       variables[working_index] = new b_var(name, new unsigned char(3), char_pointer);

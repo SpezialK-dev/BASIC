@@ -76,6 +76,8 @@ Rauskommende Werte haben folgende Bedeutungen
 
 ##### Typenumwandlung
 um bei zahlen umzuwandeln subtrahieren wir mit dem char '0' und geben als ausgabe typ einen int an, dann funktioniert es. Ansonstne nicht!!
+
+Bei Floats ist sowohl , als auch . Als abtrennung vom nachkommerstellen bereich erlaubt. Dies kann sich aber in der zukunft ändern wenn , gebraucht wird eventuell.
 ###### INT
 
 Wir iterieren durch das array und multiplizieren denn vorwert mit 10 und addieren unsere aktuelle zahl hinzu egal, wie viele 0 wir davor haben es wird funtkionieren

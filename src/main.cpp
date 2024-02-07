@@ -20,16 +20,23 @@ int main(){
     unsigned char test[20]{"Hello World"};
     unsigned char test2[20]{"Goodbye World"};
     unsigned char test_v[10]{"123"};
+    unsigned char test_f[15]{14, '2' ,'4','1','3','.','1','2','5','4','9'};
     v.create_new_variable(test,test_v);
     v.create_new_variable(test2,test);
+    v.create_new_variable(test,test_f);
     //testing return values
     unsigned char* return_test;
     unsigned char* return_test2;
     int* return_var_test;
-    //return_test =  v.get_variable_name(0);
-    //return_test2 =v.get_variable_name(1);
-    //return_var_test = static_cast<int*>(v.get_value(0));
-    //std::cout << return_test << "::"<< *return_var_test <<"," << return_test2 << std::endl;
+    char* return_var_test2;
+    float* return_var_test3;
+    return_test =  v.get_variable_name(0);
+    return_test2 =v.get_variable_name(1);
+    return_var_test3 = static_cast<float*>(v.get_value(2));
+    return_var_test = static_cast<int*>(v.get_value(0));
+    return_var_test2 = static_cast<char*>(v.get_value(1));
+    std::cout << return_test << " :: "<< *return_var_test <<" | " << return_test2 <<  " :: "<< *(return_var_test2) << "\n Just Float Value: "
+    << *(return_var_test3)  << std::endl;
     
     // testing delete Statment
     //v.delete_variabel(0);
