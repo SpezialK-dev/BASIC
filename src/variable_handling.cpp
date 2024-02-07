@@ -6,8 +6,7 @@
 //creation of new variable
 // does not return anything might return a statuscode in the future as a char.
 void variable_handling::create_new_variable(unsigned char  name[], unsigned char value[]){
-    unsigned char working_index = find_space_in_variable(name);
-
+    unsigned char working_index = find_space_in_variable(name); 
   // value stuff : 
   // type detection
   // first 2 values are checked in case its a special value like a string or a float
@@ -27,7 +26,8 @@ void variable_handling::create_new_variable(unsigned char  name[], unsigned char
 
 
 	      //getting space and putting variable on stack
-	      variables[working_index] = new b_var(name, 1, new int(result));
+    
+	      variables[working_index] = new b_var(name, new unsigned char(1), new int(result));
       }
     }else if(value[0] == 15 || isalpha(value[1])){
       //String code

@@ -2,7 +2,7 @@
 #include "b_var.h"
 
 //constructor
-b_var::b_var(unsigned char in_name[], unsigned char in_type, void* in_pointer )
+b_var::b_var(unsigned char in_name[], unsigned char *in_type, void* in_pointer )
 {
     for(int i = 0; i< 19; ++i){
       name[i] = in_name[i];
@@ -13,9 +13,9 @@ b_var::b_var(unsigned char in_name[], unsigned char in_type, void* in_pointer )
     // 1 = int
     // 2 = Float
     // 3 = String
-    *type = in_type;
+    type = in_type;
     pointer = in_pointer;
-    std::cout<<"NAME: " << name <<"\n type: " << type << "\nPointer: " << &pointer << "\nPointer Value: " << pointer<<std::endl;
+    std::cout<<"NAME: " << name <<"\n type: " << type << "\nPointer: " << &pointer << "\nPointer Value: " << *static_cast<int*>(pointer)<<std::endl;
 
 }
 
