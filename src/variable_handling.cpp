@@ -1,6 +1,13 @@
 #include "ctype.h"
 #include "variable_handling.h"
 
+long unsigned int pow_10(int exponent){
+    long unsigned int x = 1;
+    for(int i = 0; i < exponent; ++i){
+      x = x * 10;
+    }
+    return x;
+}
 
 
 //creation of new variable
@@ -23,20 +30,20 @@ void variable_handling::create_new_variable(unsigned char  name[], unsigned char
       for(int i = 1; i< 120 ; i++){
           if(value[i] == '\0' || value[i] == 0){break;}
           if(value[i] == '.' || value[i] == ','){
-            point_in_float = i;
+            point_in_float = ++i;
             break;
           }
-	        first_float_part = first_float_part * 10 + (value[i]- '0');
+	        first_float_part = first_float_part * 10 + (value[i]-'0');
       }
       //copying part behind the . or , to a new int
-      for(point_in_float+1; point_in_float< 120; ++point_in_float){
+      for(point_in_float; point_in_float< 120; ++point_in_float){
 	      if(value[point_in_float] == '\0' || value[point_in_float] == 0){break;}
-	      last_float_part = last_float_part * 10 + (value[point_in_float]- '0');
+	      last_float_part = last_float_part * 10 + (value[point_in_float]-'0');
         //counter to see how many numbers we have after the . 
         ++counter_after_point_f;
-
 	    }
-      float result = float(first_float_part) + (float(last_float_part)/10*counter_after_point_f);
+
+      float result = float(first_float_part) +(float(last_float_part)/float(pow_10(counter_after_point_f)));
       variables[working_index] = new b_var(name, new unsigned char(1), new float{result});
 
     } 

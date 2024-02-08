@@ -20,7 +20,7 @@ int main(){
     unsigned char test[20]{"Hello World"};
     unsigned char test2[20]{"Goodbye World"};
     unsigned char test_v[10]{"123"};
-    unsigned char test_f[15]{14, '2' ,'4','1','3','.','1','2','5','4','9'};
+    unsigned char test_f[15]{14, '2' ,'4','1','3','.','1','2','5','4','9','\0'};
     v.create_new_variable(test,test_v);
     v.create_new_variable(test2,test);
     v.create_new_variable(test,test_f);
