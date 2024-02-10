@@ -10,6 +10,21 @@ ich werde wieder einen custom datentyp denke ich mal implementieren, dieser wird
 für das einzelne Aufrufen werde ich überladung nutzten müssen von Konstruktoren, wobei ich mir da noch nicht sicher bin wie ich es machen werde, eventuell eine generische Funtkion welche denn pointer sowie die werte übergeben bekommt. oder ich mache es so wie in Haskall wo nur ein wert übergeben werden kann und baue die irgend was mit Pointer magie. 
 
 
+Das heißt wir werden 3 klassen haben 
+1. funktionstable.cpp
+2. funk_var.cpp
+3. funktions_dic.cpp
+
+### 1. funktionstable.cpp
+Hier werden die Funktionen gespeichert. dabei muss es eine Funktion geben welche die Tabelle anhand des namen durchsucht, dabei ist meine erste idee es dabei einfach relativ simpel zu durchsuchen.  
+
+### 2. funk_var.cpp
+Die klasse welche in der Funktionstabelle gespeichert wird. Objekte dieser Klasse speichern einen Pointer auf die Funktion, denn namen, der Token ist der Index, und es speichert auch ein array mit dem Typensignatur. Wobei ich hier eventuell ein limit einstellen werde an wie viele Variabeln man übergeben kann.
+Es muss auch denn Return typen speichern.
+
+
+### 3. funktions_dic.cpp
+hier werden die ganzen Funktionen selbst definiert. Dies mache ich damit es übersichtlicher bleibt und man leichter erkennt was hilfsfunktion allein für Funktionen der Sprache selbst sind.
 
 # Was ist der Statment table ?
 
