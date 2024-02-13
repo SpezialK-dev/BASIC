@@ -1,2 +1,2 @@
 compiler :
-	g++ -o BASIC ./src/main.cpp ./src/variable_handling.cpp ./src/b_var.cpp ./src/funk_var.cpp ./src/funktionstable.cpp ./src/funktions_dic.cpp
+	g++ -o BASIC ./src/main.cpp ./src/variables/variable_handling.cpp ./src/variables/b_var.cpp ./src/funktions/funk_var.cpp ./src/funktions/funktionstable.cpp ./src/funktions/funktions_dic.cpp

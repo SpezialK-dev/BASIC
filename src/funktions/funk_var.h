@@ -2,7 +2,7 @@ class funk_var
 {
 private:
     void (*funtion_pointer)();
-    char return_type;
+    unsigned char return_type;
     char type_signature[10];
     char name[25];
 public:
