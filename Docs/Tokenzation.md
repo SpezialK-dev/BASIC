@@ -4,6 +4,8 @@ eine Idee, welche ich mir aus der Atari implementation abgeschaut habe, also wer
 
 ## Meine Implementation 
 
+Soll im editor passieren 
+
 ### Design Entscheidungen
 
 Ich werde denn Typen CHAR nutzten also token zu welchem wir umwandeln. Dabei sind wie in der Atari implementation die ersten 80 chars für Sprachbefehle auch wenn wir diese wahrscheinlich noch nicht kommplett ausnutzten werden. Dafür bleiben uns dann noch 176 spaces frei für variabeln. Wobei sich das relativ leicht auch noch später zu einem int verändern lassen. 
