@@ -1,9 +1,5 @@
 #include "funk_var.h"
 
-
-void* funk_var::get_func(){
-    //return funtion_pointer;
-}
 unsigned char funk_var::get_return_type(){
     return return_type;
 }

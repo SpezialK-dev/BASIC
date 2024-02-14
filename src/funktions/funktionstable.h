@@ -4,12 +4,12 @@
 class funktionstable
 {
 private:
-    funk_var all_funktions[];
+    funk_var all_funktions[40];
 public:
     funktionstable();
 };
 
-funktionstable::funktionstable(/* args */)
+funktionstable::funktionstable()
 {
     
 }

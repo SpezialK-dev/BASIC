@@ -17,6 +17,7 @@ Das heißt wir werden 3 klassen haben
 
 ### 1. funktionstable.cpp
 Hier werden die Funktionen gespeichert. dabei muss es eine Funktion geben welche die Tabelle anhand des namen durchsucht, dabei ist meine erste idee es dabei einfach relativ simpel zu durchsuchen.  
+Nach einer kleinen Anpassung soll es jetzt hier 2 Arrays geben eins welches funk_var speichert und eins was die funktionen selbst speichert, dabei ist der index der selbe. Dies soll es einfacher machen auf die Funktionen zuzugreifen. auch wenn es leider die array zugriffe an sich erhöht. 
 
 ### 2. funk_var.cpp
 Die klasse welche in der Funktionstabelle gespeichert wird. Objekte dieser Klasse speichern einen Pointer auf die Funktion, denn namen, der Token ist der Index, und es speichert auch ein array mit dem Typensignatur. Wobei ich hier eventuell ein limit einstellen werde an wie viele Variabeln man übergeben kann.

@@ -42,11 +42,11 @@ int main(){
   << *(return_var_test3)  << std::endl;
   
   // testing delete Statment
-  //v.delete_variabel(0);
+  //v.delete_variabel(0); 
   //return_test = v.get_variable_name(0);
   //std::cout << return_test << std::endl;
   // testing funk var
-  funk_var testFunk{&get_Input,'x' ,test_sig, test2_sig};
+  funk_var testFunk{'x' ,test_sig, test2_sig};
     
 }
 
