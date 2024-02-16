@@ -28,3 +28,4 @@ soll denn tokenizer aufrufen, ist für die eingabe verantwortlich, sowie die ver
 - linien an sich dürfen aber nur 120 bytes(chars in meinem fall) eingaben sein.-> eventuell auf 128 erweitern weil das das max von Atari BASIC war. was dort phyisch möglich war. 
 - anführende blank spaces sollten ignoriert werden
 - 32767 ist die maximale anzahl an linien
+- line numbers werden nicht an den Tokenizer übergeben, da sie lediglich für UI dienen und als index im array genutzt werden. 
