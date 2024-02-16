@@ -3,19 +3,30 @@ class funktions_dic
 private:
     
 public:
-    void print(int a);
-    void print(float a);
-    void print(char* a);
+    void PRINT(int a);
+    void PRINT(float a);
+    void PRINT(char* a);
 
-    int plus(int a, int b);
-    float plus(float a, float b);
+    int PLUS(int a, int b);
+    float PLUS(float a, float b);
 
-    int minus(int a, int b);
-    float minus(float a, float b);
+    int MINUS(int a, int b);
+    float MINUS(float a, float b);
 
-    int times(int a, int b);
-    float times(float a, float b);
+    int TIMES(int a, int b);
+    float TIMES(float a, float b);
 
-    int multiplication(int a, int b);
-    float multiplication(float a,float b);
+    int MULTIPLICATIOn(int a, int b);
+    float MULTIPLICATIOn(float a,float b);
+
+    //conversion code
+    float INT_TO_FLOAT(int a);
+    int FLOAT_TO_INT(float a);
+
+    void GOTO(int line_numb);
+
+    //not sure of implementation
+    void LET(int a);
+    void LET(float a);
+    //think of a way for strings
 };
