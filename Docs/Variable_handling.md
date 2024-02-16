@@ -73,6 +73,10 @@ Rauskommende Werte haben folgende Bedeutungen
 
 3 = String
 
+Typen welche ich eventuell hinzufügen will:
+
+- Arrays
+- Zahlentypen (wenn funktionen sowohl int's als auch floats nehemen können, wobei das hier vielleicht an der Falschen stelle ist.)
 
 ##### Typenumwandlung
 um bei zahlen umzuwandeln subtrahieren wir mit dem char '0' und geben als ausgabe typ einen int an, dann funktioniert es. Ansonstne nicht!!
