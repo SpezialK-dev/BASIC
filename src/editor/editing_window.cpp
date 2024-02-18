@@ -81,3 +81,7 @@ char* editing_window::get_linebuffer_line(int line_in_linebuffer){
     }
     return linebuffer[line_in_linebuffer];
 }
+
+void editing_window::end_editing_window(){
+    currently_running = false;
+}

@@ -1,34 +1,34 @@
+#include "editor/editing_window.h"
+#include "variables/b_var.h"
+#include "variables/variable_handling.h"
+#include <iostream>
+
+
 class funktions_dic
 {
 private:
     
 public:
-    void EXIT();
+    void EXIT(editing_window window);
 
-    void PRINT(int a);
-    void PRINT(float a);
-    void PRINT(char* a);
+    //maybe have to replace this with one methode
+    void PRINT(b_var);
 
-    int PLUS(int a, int b);
-    float PLUS(float a, float b);
+    b_var PLUS(b_var a, b_var b);
 
-    int MINUS(int a, int b);
-    float MINUS(float a, float b);
+    b_var MINUS(b_var a, b_var b);
 
-    int TIMES(int a, int b);
-    float TIMES(float a, float b);
+    b_var TIMES(b_var a, b_var b);
 
-    int MULTIPLICATIOn(int a, int b);
-    float MULTIPLICATIOn(float a,float b);
+    b_var MULTIPLICATIOn(b_var a, b_var b);
 
     //conversion code
-    float INT_TO_FLOAT(int a);
-    int FLOAT_TO_INT(float a);
+    b_var INT_TO_FLOAT(b_var a);
+    b_var FLOAT_TO_INT(b_var a);
 
     void GOTO(int line_numb);
 
     //not sure of implementation
-    void LET(int a);
-    void LET(float a);
+    void LET(char* input);
     //think of a way for strings
 };

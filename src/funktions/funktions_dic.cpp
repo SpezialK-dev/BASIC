@@ -1,30 +1,21 @@
 #include "funktions_dic.h"
+// other stuff
 
-
-// normal arithmatic
-int funktions_dic::PLUS(int a, int b){
-    return a +b;
+void funktions_dic::EXIT(editing_window window){
+    window.end_editing_window();
 }
 
-float funktions_dic::PLUS(float a, float b){
-    return a +b;
-}
-
-//minus
-int funktions_dic::MINUS(int a, int b){
-    return a - b;
-}
-
-float funktions_dic::MINUS(float a, float b){
-    return a -b;
-}
-
-//multiplication
-int funktions_dic::TIMES(int a, int b){
-    return a* b;
-}
-
-float funktions_dic::TIMES(float a, float b){
-    return a*b;
+// print
+//maybe replace with one function
+void funktions_dic::PRINT(b_var a){
+    unsigned char type = a.get_type();
+    if(type == 1){
+        std::cout << *(static_cast<int*>(a.get_pointer())) <<std::endl;
+    }else if(type == 2){
+        std::cout << *(static_cast<float*>(a.get_pointer())) <<std::endl;
+    }else if(type == 3){
+        // not sure might neeed not need to dereference this its supposed to print out everything
+        std::cout << (static_cast<char*>(a.get_pointer())) <<std::endl;
+    } 
 }
 

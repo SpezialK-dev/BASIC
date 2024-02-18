@@ -27,6 +27,8 @@ Es muss auch denn Return typen speichern.
 ### 3. funktions_dic.cpp
 hier werden die ganzen Funktionen selbst definiert. Dies mache ich damit es übersichtlicher bleibt und man leichter erkennt was hilfsfunktion allein für Funktionen der Sprache selbst sind.
 
+Error handling soltle beim Tokenizing stattfinden!!
+
 Die funktionen und wie sie funktionieren werden wir von hier nehmen 
 https://www.dartmouth.edu/basicfifty/commands.html
 Sowie eineige Standart funktionen welche immer drinne sein sollten wie plus minus etc,...
