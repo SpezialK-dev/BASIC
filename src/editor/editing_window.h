@@ -9,9 +9,11 @@ private:
         "TYPE MISSMATCH",
     };
     int last_usedline;
+    bool currently_running;
     void add_line();
     void remove_whitespace();//this might not be needed
-    bool currently_running;
+    int get_line_number(char* input_line);
+
 public:
     void open_editor();
     char* get_linebuffer_line(int line_in_linebuffer);

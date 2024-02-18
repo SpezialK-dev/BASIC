@@ -44,6 +44,6 @@ int main(){
   funk_var testFunk{'x' ,test_sig, test2_sig};
   editing_window e;
   e.raise_error(0);
-    
+  e.open_editor();
 }
 

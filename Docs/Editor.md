@@ -28,6 +28,9 @@ Die aktuellen error codes
 
 
 und die dazugehörige Error codes.
+
+
+
 # Spezifikationen
 
 - Zeilen werden nicht in Text form sondern NUR in Token Form gespeichert 
@@ -41,3 +44,6 @@ und die dazugehörige Error codes.
 - anführende blank spaces sollten ignoriert werden
 - 32767 ist die maximale anzahl an linien
 - line numbers werden nicht an den Tokenizer übergeben, da sie lediglich für UI dienen und als index im array genutzt werden. 
+
+
+## Eingabe von line numbers, diese werden
