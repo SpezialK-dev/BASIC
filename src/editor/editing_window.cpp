@@ -17,3 +17,6 @@ void editing_window::open_editor(){
         add_line();
     }
 }
+void editing_window::raise_error(int error_code){
+    std::cout << "ERROR : " << error_msgs[error_code] << std::endl;
+}

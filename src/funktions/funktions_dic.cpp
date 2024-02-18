@@ -2,29 +2,29 @@
 
 
 // normal arithmatic
-int funktions_dic::plus(int a, int b){
+int funktions_dic::PLUS(int a, int b){
     return a +b;
 }
 
-float funktions_dic::plus(float a, float b){
+float funktions_dic::PLUS(float a, float b){
     return a +b;
 }
 
 //minus
-int funktions_dic::minus(int a, int b){
+int funktions_dic::MINUS(int a, int b){
     return a - b;
 }
 
-float funktions_dic::minus(float a, float b){
+float funktions_dic::MINUS(float a, float b){
     return a -b;
 }
 
 //multiplication
-int funktions_dic::times(int a, int b){
+int funktions_dic::TIMES(int a, int b){
     return a* b;
 }
 
-float funktions_dic::times(float a, float b){
+float funktions_dic::TIMES(float a, float b){
     return a*b;
 }
 

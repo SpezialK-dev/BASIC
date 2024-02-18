@@ -16,6 +16,18 @@ Hierbei sollte es eine öffentliche Methode geben um Um in tokens umzuwandeln un
 ## Editing window
 soll denn tokenizer aufrufen, ist für die eingabe verantwortlich, sowie die verarbeitung der eingabe.
 
+## Error code
+
+Ich erstelle ein array mit error codes, für das erste werde ich ein maximum an 20 error codes erlauben, diese Zahl ist aber nirgendwo festgeschrieben und lediglich als erste definition gedacht, das kann sich sehr schnell ändern. Eine Error msg kann maximal 250 zeichen beanspruchen, dieser wert ist wieder abiträr gewählt und könnte teoretisch erhöht werden
+
+Die aktuellen error codes 
+
+0:  "LINE TO LONG", 
+1:  "SYNTAX ERROR",
+2:  "TYPE MISSMATCH",
+
+
+und die dazugehörige Error codes.
 # Spezifikationen
 
 - Zeilen werden nicht in Text form sondern NUR in Token Form gespeichert 
