@@ -3,6 +3,8 @@ class funktions_dic
 private:
     
 public:
+    void EXIT();
+
     void PRINT(int a);
     void PRINT(float a);
     void PRINT(char* a);
