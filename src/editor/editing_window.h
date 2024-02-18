@@ -7,13 +7,13 @@ private:
         "LINE TO LONG", 
         "SYNTAX ERROR",
         "TYPE MISSMATCH",
-        "OUT OF LINEBUFFER SPACE"
+        "READING/WRITING OUT OF LINE BUFFER SPACE"
     };
     int last_usedline;
     bool currently_running;
     void add_line();
-    void remove_whitespace();//this might not be needed
     int get_line_number(char* input_line);
+    void copy_to_line_buffer(char* input, int position);
 
 public:
     void open_editor();

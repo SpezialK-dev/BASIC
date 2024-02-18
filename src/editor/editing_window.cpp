@@ -26,9 +26,7 @@ void editing_window::add_line(){
     obj_tokenizer.tokenize(input_arr, outputarr);
 
     //adding the tokenizer ouput to the final array
-    
-
-    //TODO add to linebuffer
+    copy_to_line_buffer(outputarr, current_line);
     ++last_usedline; //TODO move to add to linebuffer
 }
 void editing_window::open_editor(){
@@ -40,9 +38,7 @@ void editing_window::open_editor(){
 void editing_window::raise_error(int error_code){
     std::cout << "ERROR : " << error_msgs[error_code] << std::endl;
 }
-
-
-//breaks when encuntering the a char or an empty space
+//breaks when encuntering the a char
 int editing_window::get_line_number(char* input_line){
     int i = 0;
     int result = 0;
@@ -68,4 +64,20 @@ int editing_window::get_line_number(char* input_line){
         raise_error(3);
     }
     return result;
+}
+void editing_window::copy_to_line_buffer(char* input, int position){
+    for(int i = 0; i< 256; ++i){
+        linebuffer[position][i] = input[i];
+        if(input[i] == '\0'){
+            break;
+        }
+    }
+}
+
+char* editing_window::get_linebuffer_line(int line_in_linebuffer){
+    if(line_in_linebuffer >= 32767){
+        raise_error(3);
+        return linebuffer[0];
+    }
+    return linebuffer[line_in_linebuffer];
 }

@@ -25,12 +25,12 @@ Die aktuellen error codes
 0:  "LINE TO LONG", 
 1:  "SYNTAX ERROR",
 2:  "TYPE MISSMATCH",
-3:  "OUT OF LINEBUFFER SPACE"
+3:  "READING/WRITING OUT OF LINE BUFFER SPACE"
 
 
 und die dazugehörige Error codes.
 
-
+3 . passiert wenn man auf einen wert außerhalb des LINE BUFFER arrays zuzugreifen oder dahinzuschreiben
 
 # Spezifikationen
 

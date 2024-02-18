@@ -7,7 +7,7 @@ public:
     char tokenize(char* input_arr, char* output);
 };
 
-tokenizer::tokenizer(/* args */)
+inline tokenizer::tokenizer(/* args */)
 {
 
 }
