@@ -3,9 +3,11 @@ class tokenizer
 private:
    
 public:
-    tokenizer(/* args */);
+    tokenizer();
+    char tokenize(char* input_arr, char* output);
 };
 
 tokenizer::tokenizer(/* args */)
 {
+
 }

@@ -1,12 +1,13 @@
 #include <iostream>
 #include "editing_window.h"
-#include <ctype.h>
+#include "tokenizer.h"
 
 void editing_window::add_line(){
     int current_line;
     char c= 0;
     int index =0;
     char input_arr[256];
+    //getting input from user 
     while(std::cin.get(c)){
         if(c == '\n' || index >= 121){
             break;
@@ -15,14 +16,17 @@ void editing_window::add_line(){
         ++index;
     }
     input_arr[index] = '\0';
+    //line number stuff
     current_line = get_line_number(input_arr);
-    std::cout << current_line << " : " <<input_arr << std::endl;
+    std::cout << current_line << ": " <<input_arr << std::endl;
     
+    //tokenizer stuff
+    tokenizer obj_tokenizer;
+    char outputarr[256];
+    obj_tokenizer.tokenize(input_arr, outputarr);
+
+    //adding the tokenizer ouput to the final array
     
-    
-    //TODO Add language correctness checking
- 
-    //TODO add tokenizer
 
     //TODO add to linebuffer
     ++last_usedline; //TODO move to add to linebuffer
@@ -56,6 +60,12 @@ int editing_window::get_line_number(char* input_line){
     if(result == 0){
         // as a fallback if no line is specified
         result = last_usedline;
+    }
+    // checking if 
+    if(result >= 32767){
+        //TODO add a better way to deal with this error 
+        result = 0;
+        raise_error(3);
     }
     return result;
 }

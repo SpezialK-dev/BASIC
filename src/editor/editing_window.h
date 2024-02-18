@@ -7,6 +7,7 @@ private:
         "LINE TO LONG", 
         "SYNTAX ERROR",
         "TYPE MISSMATCH",
+        "OUT OF LINEBUFFER SPACE"
     };
     int last_usedline;
     bool currently_running;

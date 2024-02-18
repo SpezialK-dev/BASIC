@@ -25,6 +25,7 @@ Die aktuellen error codes
 0:  "LINE TO LONG", 
 1:  "SYNTAX ERROR",
 2:  "TYPE MISSMATCH",
+3:  "OUT OF LINEBUFFER SPACE"
 
 
 und die dazugehörige Error codes.
