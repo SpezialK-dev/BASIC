@@ -18,9 +18,9 @@ public:
 
     b_var MINUS(b_var a, b_var b);
 
-    b_var TIMES(b_var a, b_var b);
+    b_var DIVISION(b_var a, b_var b);
 
-    b_var MULTIPLICATIOn(b_var a, b_var b);
+    b_var MULTIPLICATION(b_var a, b_var b);
 
     //conversion code
     b_var INT_TO_FLOAT(b_var a);

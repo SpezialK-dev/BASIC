@@ -12,5 +12,4 @@ public:
     unsigned char* get_variable_name(unsigned char token);
     void* get_value(unsigned char token);
     void delete_variabel(unsigned char token);
-
 };
