@@ -30,3 +30,13 @@ int string_lib::search_for_substring(char* search_in, char* what_to_search_for){
     
     return return_value;
 }
+
+bool string_lib::isequal(char* a, char* b){
+    int i = 0;
+    while(*(a+i)  != '\0' && *(b+i) != '\0'){
+        if(*(a+i) != *(b+i)){
+            return false;
+        }
+        ++i; 
+    }
+}
