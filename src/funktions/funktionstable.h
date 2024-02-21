@@ -13,7 +13,7 @@ public:
     void* get_funk_var_pointer(int i);
 };
 
-funktionstable::funktionstable(){
-    
-}
+//funktionstable::funktionstable(){
+//    
+//}
 
