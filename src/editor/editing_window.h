@@ -1,3 +1,6 @@
+#ifndef editing_window_h
+#define editing_window_h
+
 class editing_window
 {
 private:
@@ -30,3 +33,5 @@ inline editing_window::editing_window()
     //TODO preify this
     
 }
+
+#endif /* editing_window_h */
