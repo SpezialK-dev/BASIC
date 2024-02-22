@@ -75,11 +75,11 @@ b_var* funktions_dic::MULTIPLICATION(b_var a, b_var b){
     }
 }
 
-b_var funktions_dic::INT_TO_FLOAT(b_var a){
+b_var* funktions_dic::INT_TO_FLOAT(b_var a){
 
 }
 
-b_var funktions_dic::FLOAT_TO_INT(b_var a){
+b_var* funktions_dic::FLOAT_TO_INT(b_var a){
 
 }
 
