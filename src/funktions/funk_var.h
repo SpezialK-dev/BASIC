@@ -1,3 +1,6 @@
+#ifndef funk_var_h
+#define funk_var_h
+
 class funk_var
 {
 private:
@@ -26,3 +29,4 @@ inline funk_var::funk_var(unsigned char inp_return_type, char inp_type_signature
     copy_array(10, type_signature, inp_type_signature);
     copy_array(25, name, inp_name);
 }
+#endif 

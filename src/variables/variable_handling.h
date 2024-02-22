@@ -1,4 +1,7 @@
 #include "b_var.h"
+#ifndef variable_handling_h
+#define variable_handling_h
+
 
 class variable_handling
 {
@@ -13,3 +16,4 @@ public:
     void* get_value(unsigned char token);
     void delete_variabel(unsigned char token);
 };
+#endif 

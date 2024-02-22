@@ -1,5 +1,9 @@
 #include "../funktions/funktionstable.h"
 
+#ifndef tokenizer_h
+#define tokenizer_h
+
+
 class tokenizer
 {
 private:
@@ -14,3 +18,4 @@ inline tokenizer::tokenizer(/* args */)
 {
 
 }
+#endif 

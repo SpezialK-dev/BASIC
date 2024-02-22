@@ -1,6 +1,9 @@
 #include "funk_var.h"
 #include "funktions_dic.h"
 
+#ifndef funktionstable_h
+#define funktionstable_h
+
 class funktionstable
 {
 private:
@@ -17,3 +20,4 @@ public:
 //    
 //}
 
+#endif 

@@ -3,6 +3,8 @@
 #include "../variables/variable_handling.h"
 #include <iostream>
 
+#ifndef funktions_dic_h
+#define funktions_dic_h
 
 class funktions_dic
 {
@@ -32,3 +34,4 @@ public:
     void LET(char* input);
     //think of a way for strings
 };
+#endif 
