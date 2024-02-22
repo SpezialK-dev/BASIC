@@ -19,10 +19,10 @@ void funktions_dic::PRINT(b_var a){
     } 
 }
 
-b_var funktions_dic::PLUS(b_var a, b_var b){
+b_var* funktions_dic::PLUS(b_var a, b_var b){
     //simple precaution though should not be triggered
     if(a.get_type() != b.get_type()){
-        return;
+        return new b_var;
     }
     unsigned char type = a.get_type();
     if(type == 1){
@@ -33,10 +33,11 @@ b_var funktions_dic::PLUS(b_var a, b_var b){
     }
 }
 
-b_var funktions_dic::MINUS(b_var a, b_var b){
+b_var* funktions_dic::MINUS(b_var a, b_var b){
     //simple precaution though should not be triggered
     if(a.get_type() != b.get_type()){
-        return;
+        return new b_var;
+;
     }
     unsigned char type = a.get_type();
     if(type == 1){
@@ -46,10 +47,10 @@ b_var funktions_dic::MINUS(b_var a, b_var b){
         float return_value = *(static_cast<float*>(a.get_pointer())) - *(static_cast<float*>(b.get_pointer()));
     }
 }
-b_var funktions_dic::DIVISION(b_var a, b_var b){
+b_var* funktions_dic::DIVISION(b_var a, b_var b){
     //simple precaution though should not be triggered
     if(a.get_type() != b.get_type()){
-        return;
+        return new b_var;
     }
     unsigned char type = a.get_type();
     if(type == 1){
@@ -60,10 +61,10 @@ b_var funktions_dic::DIVISION(b_var a, b_var b){
     }
 }
 
-b_var funktions_dic::MULTIPLICATION(b_var a, b_var b){
+b_var* funktions_dic::MULTIPLICATION(b_var a, b_var b){
     //simple precaution though should not be triggered
     if(a.get_type() != b.get_type()){
-        return;
+        return new b_var;
     }
     unsigned char type = a.get_type();
     if(type == 1){

@@ -78,6 +78,9 @@ Typen welche ich eventuell hinzufügen will:
 - Arrays
 - Zahlentypen (wenn funktionen sowohl int's als auch floats nehemen können, wobei das hier vielleicht an der Falschen stelle ist.)
 
+
+Typ 0 wird zurückgegeben, wenn eine Funktion ausgeführt und Typen ungleich sind bei einer Funktion welche gleiche Typen vorrausetzt
+Dafür wird ein leerer Konstruktor aufgerufen von b_var
 ##### Typenumwandlung
 um bei zahlen umzuwandeln subtrahieren wir mit dem char '0' und geben als ausgabe typ einen int an, dann funktioniert es. Ansonstne nicht!!
 

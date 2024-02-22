@@ -16,17 +16,17 @@ public:
     //maybe have to replace this with one methode
     void PRINT(b_var);
 
-    b_var PLUS(b_var a, b_var b);
+    b_var* PLUS(b_var a, b_var b);
 
-    b_var MINUS(b_var a, b_var b);
+    b_var* MINUS(b_var a, b_var b);
 
-    b_var DIVISION(b_var a, b_var b);
+    b_var* DIVISION(b_var a, b_var b);
 
-    b_var MULTIPLICATION(b_var a, b_var b);
+    b_var* MULTIPLICATION(b_var a, b_var b);
 
     //conversion code
-    b_var INT_TO_FLOAT(b_var a);
-    b_var FLOAT_TO_INT(b_var a);
+    b_var* INT_TO_FLOAT(b_var a);
+    b_var* FLOAT_TO_INT(b_var a);
 
     void GOTO(int line_numb);
 
