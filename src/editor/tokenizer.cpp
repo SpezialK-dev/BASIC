@@ -2,7 +2,7 @@
 #include "../lib/string_lib.h"
 
 
-int tokenizer::search_through_funktions(funktionstable funk_table, char* input_arr){
+int tokenizer::search_through_funktions(funktionstable funk_table,unsigned char* input_arr){
     for(int i = 0; i< 40; ++i){
         funk_var funk = funk_table.getfunk_var(i);
         if(string_lib::isequal(funk.get_name(), input_arr)){
@@ -12,11 +12,14 @@ int tokenizer::search_through_funktions(funktionstable funk_table, char* input_a
     return 999;
 }
 
-int tokenizer::search_through_variables(funktionstable funk_table, char* input_arr){
-
+int tokenizer::search_through_variables(b_var* variables_table,unsigned char* input_arr){
+    for(int i=0; i<128; ++i ){
+        b_var current_var= *(variables_table+i);
+        //TODO implement checking equality
+    }
 }
 
 
-char tokenizer::tokenize(char* input_arr, char* output){
+unsigned char tokenizer::tokenize(unsigned char* input_arr,unsigned char* output){
     
 }

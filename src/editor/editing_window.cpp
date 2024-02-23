@@ -6,13 +6,13 @@ void editing_window::add_line(){
     int current_line;
     char c= 0;
     int index =0;
-    char input_arr[256];
+    unsigned char input_arr[256];
     //getting input from user 
     while(std::cin.get(c)){
         if(c == '\n' || index >= 121){
             break;
         }
-        input_arr[index] = c;
+        input_arr[index] =static_cast<unsigned char>(c);
         ++index;
     }
     input_arr[index] = '\0';
@@ -22,7 +22,7 @@ void editing_window::add_line(){
     
     //tokenizer stuff
     tokenizer obj_tokenizer;
-    char outputarr[256];
+    unsigned char outputarr[256];
     obj_tokenizer.tokenize(input_arr, outputarr);
 
     //adding the tokenizer ouput to the final array
@@ -39,7 +39,7 @@ void editing_window::raise_error(int error_code){
     std::cout << "ERROR : " << error_msgs[error_code] << std::endl;
 }
 //breaks when encuntering the a char
-int editing_window::get_line_number(char* input_line){
+int editing_window::get_line_number(unsigned char* input_line){
     int i = 0;
     int result = 0;
     //code to check for line numbers 
@@ -65,7 +65,7 @@ int editing_window::get_line_number(char* input_line){
     }
     return result;
 }
-void editing_window::copy_to_line_buffer(char* input, int position){
+void editing_window::copy_to_line_buffer(unsigned char* input, int position){
     for(int i = 0; i< 256; ++i){
         linebuffer[position][i] = input[i];
         if(input[i] == '\0'){
@@ -74,7 +74,7 @@ void editing_window::copy_to_line_buffer(char* input, int position){
     }
 }
 
-char* editing_window::get_linebuffer_line(int line_in_linebuffer){
+unsigned char* editing_window::get_linebuffer_line(int line_in_linebuffer){
     if(line_in_linebuffer >= 32767){
         raise_error(3);
         return linebuffer[0];

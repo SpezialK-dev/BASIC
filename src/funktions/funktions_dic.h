@@ -31,7 +31,7 @@ public:
     void GOTO(int line_numb);
 
     //not sure of implementation
-    void LET(char* input);
+    void LET(unsigned char* input);
     //think of a way for strings
 };
 #endif 

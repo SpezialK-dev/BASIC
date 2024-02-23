@@ -87,6 +87,6 @@ void funktions_dic::GOTO(int line_numb){
 
 }
 
-void funktions_dic::LET(char* input){
+void funktions_dic::LET(unsigned char* input){
 
 }

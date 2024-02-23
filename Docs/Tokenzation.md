@@ -64,3 +64,9 @@ dadurch kann ich einen deutlich effizienteres verfahren nutzten im elemente zu f
 
 
 ### Verantwortliche Klassen
+
+
+
+### Tokenizer.cpp
+
+search_through_funktions und search_through_variables sollen 999 zurückgeben wenn nichts gefunden wurde. Da diese Zahl in der Aktuellen umsetztung nie erreicht werden kann.
