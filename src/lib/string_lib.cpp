@@ -1,6 +1,4 @@
 #include "string_lib.h"
-#include <cstring>
-#include "../lib/string_lib.h"
 
 
 
@@ -45,7 +43,7 @@ bool string_lib::isequal(unsigned char* a,unsigned char* b){
     }
 }
 
-static int uns_strlen(unsigned char* input_arr){
+int string_lib::uns_strlen(unsigned char* input_arr){
     int counter =0;
     while(*(input_arr+counter) != '\0'){
         ++counter;
