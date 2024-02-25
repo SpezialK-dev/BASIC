@@ -2,7 +2,6 @@
 #define funktions_dic_h
 
 #include "../editor/editing_window.h"
-#include "../variables/b_var.h"
 #include "../variables/variable_handling.h"
 #include <iostream>
 

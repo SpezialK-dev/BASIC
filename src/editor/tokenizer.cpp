@@ -1,7 +1,6 @@
 #include "tokenizer.h"
 #include "../lib/string_lib.h"
 
-
 int tokenizer::search_through_funktions(funktionstable* funk_table,unsigned char* input_arr){
     funktionstable table = *(funk_table);
     for(int i = 0; i< 40; ++i){

@@ -1,8 +1,8 @@
+
 #ifndef variable_handling_h
 #define variable_handling_h
 
 #include "b_var.h"
-
 
 class variable_handling
 {

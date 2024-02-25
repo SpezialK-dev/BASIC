@@ -1,7 +1,7 @@
 #ifndef editing_window_h
 #define editing_window_h
 
-#include "../funktions/funktionstable.h"
+class funktionstable;
 
 class editing_window
 {
@@ -16,12 +16,12 @@ private:
     };
     int last_usedline;
     bool currently_running;
-    void add_line(funktionstable* funkt_table);
+    void add_line(funktionstable *funkt_table);
     int get_line_number(unsigned char* input_line);
     void copy_to_line_buffer(unsigned char* input, int position);
 
 public:
-    void open_editor(funktionstable* funkt_table);
+    void open_editor(funktionstable *funkt_table);
     unsigned char* get_linebuffer_line(int line_in_linebuffer);
     void raise_error(int error_code);
     editing_window();
