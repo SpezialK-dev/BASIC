@@ -12,6 +12,7 @@ public:
     inline funk_var(unsigned char return_type,
             unsigned char type_signature[],unsigned char name[]
             );
+    inline funk_var();
     unsigned char get_return_type();
     unsigned char* get_type_signature();
     unsigned char* get_name();
@@ -24,5 +25,10 @@ funk_var::funk_var(unsigned char inp_return_type,unsigned char inp_type_signatur
     return_type = inp_return_type;
     copy_array(10, type_signature, inp_type_signature);
     copy_array(25, name, inp_name);
+}
+
+funk_var::funk_var(){
+    return_type = 0;
+    type_signature[0] = 0;
 }
 #endif 

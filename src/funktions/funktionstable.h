@@ -12,13 +12,13 @@ private:
     //TODO add funktion array (maybe make it public???)
     //TODO make the actuall pointer array
 public:
-    funktionstable();
+    inline funktionstable();
     funk_var getfunk_var(int index);
     void* get_funk_var_pointer(int i);
 };
 
-//funktionstable::funktionstable(){
-//    
-//}
+funktionstable::funktionstable(){
+    
+}
 
 #endif 

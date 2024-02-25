@@ -1,9 +1,9 @@
 #include <iostream>
 #include "editor/editing_window.h"
+#include "funktions/funktionstable.h"
 
 //can get a max of 255 bytes of input so 255 char array?
 //for now I will use this since, this is the amount of Chars that where possible in atari basic
-class funktionstablle;
 
 int main(){
     
