@@ -1,8 +1,9 @@
 #include <iostream>
 #include "editing_window.h"
 #include "tokenizer.h"
+#include "../funktions/funktionstable.h"
 
-void editing_window::add_line(){
+void editing_window::add_line(funktionstable* funkt_table){
     int current_line;
     char c= 0;
     int index =0;
@@ -21,15 +22,15 @@ void editing_window::add_line(){
     std::cout << current_line << ": " <<input_arr << std::endl;
     
     //tokenizer stuff
-    tokenizer obj_tokenizer;
+    
     unsigned char outputarr[256];
-    obj_tokenizer.tokenize(input_arr, outputarr);
+    tokenizer::tokenize(,input_arr, outputarr,current_line);
 
     //adding the tokenizer ouput to the final array
     copy_to_line_buffer(outputarr, current_line);
     ++last_usedline; //TODO move to add to linebuffer
 }
-void editing_window::open_editor(){
+void editing_window::open_editor(funktionstable* funkt_table){
     //main programm loop 
     while(currently_running){
         add_line();
