@@ -43,8 +43,9 @@ unsigned char tokenizer::tokenize(funktionstable* funktable,unsigned char* input
                 int value_to_safe = 0;
                 value_to_safe = search_through_funktions(funktable, saved_array);
                 if(value_to_safe != 999){
-
+                    //TODO add syntax checking to see if next 2 variables are of needed type and save type 
                     //TODO add code that then internet skips to the next iteration to scan for the next word in the table, thus adding the next token
+                    
                 }
                 //TODO add code for the variable finding!!
 

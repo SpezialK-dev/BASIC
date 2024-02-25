@@ -1,9 +1,9 @@
+#ifndef tokenizer_h
+#define tokenizer_h
+
 #include "../funktions/funktionstable.h"
 #include "../variables/variable_handling.h"
 #include "../variables/b_var.h"
-
-#ifndef tokenizer_h
-#define tokenizer_h
 
 
 class tokenizer
