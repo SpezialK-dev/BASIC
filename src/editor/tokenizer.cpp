@@ -3,8 +3,9 @@
 
 
 int tokenizer::search_through_funktions(funktionstable* funk_table,unsigned char* input_arr){
+    funktionstable table = *(funk_table);
     for(int i = 0; i< 40; ++i){
-        funk_var funk = (*(funk_table).getfunk_var(i));
+        funk_var funk = (table.getfunk_var(i));
         if(string_lib::isequal(funk.get_name(), input_arr)){
             return i;
         }

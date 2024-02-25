@@ -1,17 +1,18 @@
+#ifndef funktions_dic_h
+#define funktions_dic_h
+
 #include "../editor/editing_window.h"
 #include "../variables/b_var.h"
 #include "../variables/variable_handling.h"
 #include <iostream>
 
-#ifndef funktions_dic_h
-#define funktions_dic_h
 
 class funktions_dic
 {
 private:
     
 public:
-    void EXIT(editing_window window);
+    void EXIT();
 
     //maybe have to replace this with one methode
     void PRINT(b_var);

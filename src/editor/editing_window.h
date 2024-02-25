@@ -1,6 +1,8 @@
 #ifndef editing_window_h
 #define editing_window_h
 
+#include "../funktions/funktionstable.h"
+
 class editing_window
 {
 private:

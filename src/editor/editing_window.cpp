@@ -1,7 +1,6 @@
 #include <iostream>
 #include "editing_window.h"
 #include "tokenizer.h"
-#include "../funktions/funktionstable.h"
 
 void editing_window::add_line(funktionstable* funkt_table){
     int current_line;
@@ -24,7 +23,7 @@ void editing_window::add_line(funktionstable* funkt_table){
     //tokenizer stuff
     
     unsigned char outputarr[256];
-    tokenizer::tokenize(,input_arr, outputarr,current_line);
+    tokenizer::tokenize(funkt_table,input_arr, outputarr,current_line);
 
     //adding the tokenizer ouput to the final array
     copy_to_line_buffer(outputarr, current_line);
@@ -33,7 +32,7 @@ void editing_window::add_line(funktionstable* funkt_table){
 void editing_window::open_editor(funktionstable* funkt_table){
     //main programm loop 
     while(currently_running){
-        add_line();
+        add_line(funkt_table);
     }
 }
 void editing_window::raise_error(int error_code){

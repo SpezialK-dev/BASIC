@@ -1,8 +1,8 @@
 #include "funktions_dic.h"
 // other stuff
 
-void funktions_dic::EXIT(editing_window window){
-    window.end_editing_window();
+void funktions_dic::EXIT(){
+    // make another way for this
 }
 
 // print
