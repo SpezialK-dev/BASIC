@@ -38,6 +38,8 @@ DEZ     HEX     ERKLÄRUNG
 
 ich werde mich für das Erste auch an diesen Plan halten, da ich es mir hilft wenn man andere code teile beachten will und keine umrechnungen stattfinden müssen und kein umdenken von denn Instruktionen in dem ATARI BASIC  
 
+Bei mir Fangen alle Funktionen einfach bei 16 an, ich kann später noch eine Anpassung eventuell vornehmen wo es wirklich eine Trennung zwischen Operatoren und Funktionen gibt aber mommentan ist das erstmal noch nicht geplant
+
 ### Generelle Idee zum Ablauf
 
 Hierfür wurde die Zeilennummer schon im Vorhinein aus dem Array entfernt.

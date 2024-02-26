@@ -26,6 +26,7 @@ public:
     void raise_error(int error_code);
     editing_window();
     void end_editing_window();
+    
 };
 
 inline editing_window::editing_window()
