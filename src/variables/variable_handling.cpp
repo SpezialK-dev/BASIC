@@ -110,3 +110,7 @@ void variable_handling::delete_variabel(unsigned char token){
 unsigned char variable_handling::find_space_in_variable(unsigned char *name){
     return last_elem;
 }
+
+b_var* variable_handling::get_bvar(int index){
+    return variables[index];
+}
