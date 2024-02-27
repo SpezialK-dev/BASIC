@@ -6,21 +6,25 @@ int tokenizer::search_through_funktions(funktionstable* funk_table,unsigned char
     for(int i = 0; i< 40; ++i){
         funk_var funk = (table.getfunk_var(i));
         if(string_lib::isequal(funk.get_name(), input_arr)){
-            return i;
+            return i+16; // is the value of starting index of where the main stuff is stored
         }
     }
     return 999;
 }
 
-int tokenizer::search_through_variables(b_var* variables_table,unsigned char* input_arr){
+int tokenizer::search_through_variables(variable_handling* variables_table,unsigned char* input_arr){
+    variable_handling variable_handling_inst = *(variables_table);
     for(int i=0; i<128; ++i ){
-        b_var current_var= *(variables_table+i);
-        //TODO implement checking equality
+        b_var* current_variable = variable_handling_inst.get_bvar(i);
+        if(string_lib::isequal((*current_variable).get_name(),input_arr)){
+            return i+128;
+        }
     }
+    return 999;
 }
 
 
-void tokenizer::tokenize(funktionstable* funktable, unsigned char* input_arr,unsigned char* output, int current_linenumb){
+void tokenizer::tokenize(funktionstable* funktable,variable_handling* variables_table, unsigned char* input_arr,unsigned char* output, int current_linenumb){
     int line_buffer_index = 0; // at what position we are in the line buffer 
     int index{0};
     int starting_index{0};
@@ -45,11 +49,24 @@ void tokenizer::tokenize(funktionstable* funktable, unsigned char* input_arr,uns
                 if(value_to_safe != 999){
                     //TODO add syntax checking to see if next 2 variables are of needed type and save type 
                     //TODO add code that then internet skips to the next iteration to scan for the next word in the table, thus adding the next token
-                    value_to_safe = value_to_safe+  16; // adds the index to where the functions start
                     *(output+line_buffer_index) = value_to_safe;
                     line_buffer_index++;
 
-                    //TODO clean up variables to resort to last stand
+                    //cleaning up variables
+                    starting_index = ending_word_index;
+                    has_started = false;
+                    continue;//skip
+                }
+                //code snippet for variable stuff
+                value_to_safe = search_through_variables(variables_table,saved_array);
+                if(value_to_safe != 999){
+                    *(output+line_buffer_index) = value_to_safe;
+                    line_buffer_index++;
+
+                    //cleaning up variables
+                    starting_index = ending_word_index;
+                    has_started = false;
+                    continue;//skip
                 }
                 //TODO add code for the variable finding!!
 

@@ -6,15 +6,12 @@ class executor
 private:
     int current_line;
 public:
-    executor();
+    inline executor();
 };
 
 executor::executor()
 {
     current_line = 0;
 }
-
-
-
 
 #endif 
