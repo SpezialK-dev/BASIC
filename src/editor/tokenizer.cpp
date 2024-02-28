@@ -68,8 +68,8 @@ void tokenizer::tokenize(funktionstable* funktable,variable_handling* variables_
                     has_started = false;
                     continue;//skip
                 }
-                //TODO add code for the variable finding!!
-
+                //If there is no variable we should create one should add a catch statment if it does not fit into the variable roster 
+                
             }
             else{
                 saved_array[saved_array_index] = *(input_arr+index);
