@@ -23,7 +23,7 @@ b_var::b_var(unsigned char in_name[], unsigned char *in_type, void* in_pointer )
     };
     name[20] = '\0';
     
-    // 0 = undefined
+    // 0 = undefined // VOID 
     // 1 = int
     // 2 = Float
     // 3 = String

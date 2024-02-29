@@ -1,92 +1,92 @@
 #include "funktions_dic.h"
 // other stuff
 
-void funktions_dic::EXIT(){
+b_var* funktions_dic::EXIT(int number_param,b_var args[]){
     // make another way for this
 }
 
 // print
 //maybe replace with one function
-void funktions_dic::PRINT(b_var a){
-    unsigned char type = a.get_type();
+b_var* funktions_dic::PRINT(int number_param,b_var args[]){
+    unsigned char type = args[0].get_type();
     if(type == 1){
-        std::cout << *(static_cast<int*>(a.get_pointer())) <<std::endl;
+        std::cout << *(static_cast<int*>(args[0].get_pointer())) <<std::endl;
     }else if(type == 2){
-        std::cout << *(static_cast<float*>(a.get_pointer())) <<std::endl;
+        std::cout << *(static_cast<float*>(args[0].get_pointer())) <<std::endl;
     }else if(type == 3){
         // not sure might neeed not need to dereference this its supposed to print out everything
-        std::cout << (static_cast<char*>(a.get_pointer())) <<std::endl;
+        std::cout << (static_cast<char*>(args[0].get_pointer())) <<std::endl;
     } 
 }
 
-b_var* funktions_dic::PLUS(b_var a, b_var b){
+b_var* funktions_dic::PLUS(int number_param,b_var args[]){
     //simple precaution though should not be triggered
-    if(a.get_type() != b.get_type()){
+    if(args[0].get_type() != args[1].get_type()){
         return new b_var;
     }
-    unsigned char type = a.get_type();
+    unsigned char type = args[0].get_type();
     if(type == 1){
-        int return_value = *(static_cast<int*>(a.get_pointer())) + *(static_cast<int*>(b.get_pointer()));
+        int return_value = *(static_cast<int*>(args[0].get_pointer())) + *(static_cast<int*>(args[1].get_pointer()));
 
     }else if(type == 2){
-        float return_value = *(static_cast<float*>(a.get_pointer())) + *(static_cast<float*>(b.get_pointer()));
+        float return_value = *(static_cast<float*>(args[0].get_pointer())) + *(static_cast<float*>(args[1].get_pointer()));
     }
 }
 
-b_var* funktions_dic::MINUS(b_var a, b_var b){
+b_var* funktions_dic::MINUS(int number_param,b_var args[]){
     //simple precaution though should not be triggered
-    if(a.get_type() != b.get_type()){
+    if(args[0].get_type() != args[1].get_type()){
         return new b_var;
 ;
     }
-    unsigned char type = a.get_type();
+    unsigned char type = args[0].get_type();
     if(type == 1){
-        int return_value = *(static_cast<int*>(a.get_pointer())) - *(static_cast<int*>(b.get_pointer()));
+        int return_value = *(static_cast<int*>(args[0].get_pointer())) - *(static_cast<int*>(args[1].get_pointer()));
 
     }else if(type == 2){
-        float return_value = *(static_cast<float*>(a.get_pointer())) - *(static_cast<float*>(b.get_pointer()));
+        float return_value = *(static_cast<float*>(args[0].get_pointer())) - *(static_cast<float*>(args[1].get_pointer()));
     }
 }
-b_var* funktions_dic::DIVISION(b_var a, b_var b){
+b_var* funktions_dic::DIVISION(int number_param,b_var args[]){
     //simple precaution though should not be triggered
-    if(a.get_type() != b.get_type()){
+    if(args[0].get_type() != args[1].get_type()){
         return new b_var;
     }
-    unsigned char type = a.get_type();
+    unsigned char type = args[0].get_type();
     if(type == 1){
-        int return_value = *(static_cast<int*>(a.get_pointer())) / *(static_cast<int*>(b.get_pointer()));
+        int return_value = *(static_cast<int*>(args[0].get_pointer())) / *(static_cast<int*>(args[1].get_pointer()));
 
     }else if(type == 2){
-        float return_value = *(static_cast<float*>(a.get_pointer())) / *(static_cast<float*>(b.get_pointer()));
+        float return_value = *(static_cast<float*>(args[0].get_pointer())) / *(static_cast<float*>(args[1].get_pointer()));
     }
 }
 
-b_var* funktions_dic::MULTIPLICATION(b_var a, b_var b){
+b_var* funktions_dic::MULTIPLICATION(int number_param,b_var args[]){
     //simple precaution though should not be triggered
-    if(a.get_type() != b.get_type()){
+    if(args[0].get_type() != args[1].get_type()){
         return new b_var;
     }
-    unsigned char type = a.get_type();
+    unsigned char type = args[0].get_type();
     if(type == 1){
-        int return_value = *(static_cast<int*>(a.get_pointer())) * *(static_cast<int*>(b.get_pointer()));
+        int return_value = *(static_cast<int*>(args[0].get_pointer())) * *(static_cast<int*>(args[1].get_pointer()));
 
     }else if(type == 2){
-        float return_value = *(static_cast<float*>(a.get_pointer())) * *(static_cast<float*>(b.get_pointer()));
+        float return_value = *(static_cast<float*>(args[0].get_pointer())) * *(static_cast<float*>(args[1].get_pointer()));
     }
 }
 
-b_var* funktions_dic::INT_TO_FLOAT(b_var a){
+b_var* funktions_dic::INT_TO_FLOAT(int number_param,b_var args[]){
 
 }
 
-b_var* funktions_dic::FLOAT_TO_INT(b_var a){
+b_var* funktions_dic::FLOAT_TO_INT(int number_param,b_var args[]){
 
 }
 
-void funktions_dic::GOTO(int line_numb){
+b_var* funktions_dic::GOTO(int number_param,b_var args[]){
 
 }
 
-void funktions_dic::LET(unsigned char* input){
+b_var* funktions_dic::LET(unsigned char* input){
 
 }

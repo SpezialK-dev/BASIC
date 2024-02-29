@@ -11,27 +11,27 @@ class funktions_dic
 private:
     
 public:
-    void EXIT();
+    b_var* EXIT(int number_param,b_var args[]);
 
     //maybe have to replace this with one methode
-    void PRINT(b_var);
+    b_var* PRINT(int number_param,b_var args[]);
 
-    b_var* PLUS(b_var a, b_var b);
+    b_var* PLUS(int number_param,b_var args[]);
 
-    b_var* MINUS(b_var a, b_var b);
+    b_var* MINUS(int number_param,b_var args[]);
 
-    b_var* DIVISION(b_var a, b_var b);
+    b_var* DIVISION(int number_param,b_var args[]);
 
-    b_var* MULTIPLICATION(b_var a, b_var b);
+    b_var* MULTIPLICATION(int number_param,b_var args[]);
 
     //conversion code
-    b_var* INT_TO_FLOAT(b_var a);
-    b_var* FLOAT_TO_INT(b_var a);
+    b_var* INT_TO_FLOAT(int number_param,b_var args[]);
+    b_var* FLOAT_TO_INT(int number_param,b_var args[]);
 
-    void GOTO(int line_numb);
+    b_var* GOTO(int number_param,b_var args[]);
 
     //not sure of implementation
-    void LET(unsigned char* input);
+    b_var* LET(unsigned char* input);
     //think of a way for strings
 };
 #endif 

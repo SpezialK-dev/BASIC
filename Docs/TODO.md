@@ -4,4 +4,4 @@ Hier kommen projekte weite verbesserungs ideen rein, welche die codebase aufräu
 - [ ] eine lib für oft gebrauchte funktionen schreiben sodas es einfacher ist code zu optimisen später
 - [ ] fix the problem that causes funk_var causes when being imported into another class
 - [ ] create a default constructor for funkt_var
-- 
+- [ ] rework all funktions to have a similar type, of getting 2 bvars as input and return a void pointer. because otherwiese we have a problem

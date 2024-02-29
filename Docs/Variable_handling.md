@@ -65,7 +65,7 @@ wenn man get_type von b_var aufruft bekommt man  einen char zurück, diesen muss
 
 Rauskommende Werte haben folgende Bedeutungen
 
-0 = undefined
+0 = undefined / VOID 
 
 1 = int
 

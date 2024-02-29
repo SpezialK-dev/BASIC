@@ -9,6 +9,7 @@ class funktionstable
 {
 private:
     funk_var all_funktions[40];
+    
     //TODO add funktion array (maybe make it public???)
     //TODO make the actuall pointer array
 public:
