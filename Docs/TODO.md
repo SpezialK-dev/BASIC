@@ -8,3 +8,4 @@ Hier kommen projekte weite verbesserungs ideen rein, welche die codebase aufräu
 - [ ] Fix some copy stuff when creating a funk_var
 - [ ] copying the name of the funk var should be smarter and and go out of the loop if a stop has been found 
 - [ ] isequal should be fixed properly  
+- [ ] properly deal with garbage input

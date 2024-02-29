@@ -31,8 +31,9 @@ void tokenizer::tokenize(funktionstable* funktable,variable_handling* variables_
     int ending_word_index{0};
     int saved_array_index{0};
     bool has_started=false;
+    bool running = true;
     unsigned char saved_array[128];
-    while(*(input_arr+index) != '\0'){
+    while(running){
         //TODO maybe this creates a problem at the end of an array will have to check, since theoretically we could look outside of array 
         // might have some edege conition problems right here
         if(*(input_arr+index) !=' ' && *(input_arr+index+1) != '\0'  &&isalnum(*(input_arr+index+1))){
@@ -77,6 +78,11 @@ void tokenizer::tokenize(funktionstable* funktable,variable_handling* variables_
                 ++saved_array_index;
             }
         }
+        //my attempt at fixing just a word without empty space afterwards
+        if(*(input_arr+index) == '\0'){
+            running = false;
+        }
         ++index;
+        
     }
 }
