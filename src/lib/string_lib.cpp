@@ -1,5 +1,5 @@
 #include "string_lib.h"
-
+#include <iostream>
 
 
 
@@ -35,11 +35,21 @@ int string_lib::search_for_substring(unsigned char* search_in,unsigned char* wha
 
 bool string_lib::isequal(unsigned char* a,unsigned char* b){
     int i = 0;
-    while(*(a+i)  != '\0' && *(b+i) != '\0'){
+    //TODO add check to see if none of the arrays are empty to prevent crash from happening !!^
+    while(*(a+i)  != '\0' || *(b+i) != '\0'){
         if(*(a+i) != *(b+i)){
             return false;
         }
+        
         ++i; 
+        //temp bandaid works but IG 
+        if(*(a+i)  == '\0' && *(b+i) == '\0'){
+            return true;
+        }
+
+        if(*(a+i)  == '\0' || *(b+i) == '\0'){
+            break;
+        }
     }
 }
 
