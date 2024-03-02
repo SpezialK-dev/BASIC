@@ -5,7 +5,7 @@ class funk_var
 {
 private:
     unsigned char return_type;
-    unsigned char type_signature[10];
+    unsigned char *type_signature = new unsigned char[10];
     unsigned char name[25]{"N"};
     void copy_array(int lenght,unsigned char* to_copy_to,unsigned char* copy_from);
 public:

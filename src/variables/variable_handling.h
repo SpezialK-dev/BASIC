@@ -8,7 +8,7 @@ class variable_handling
 {
 private:
     
-    b_var* variables[128];
+    b_var* *variables  = new b_var*[128];
     unsigned char find_space_in_variable(unsigned char *name);
     unsigned char last_elem = 0; 
 public:

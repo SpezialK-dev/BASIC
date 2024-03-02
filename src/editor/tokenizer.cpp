@@ -5,7 +5,8 @@ int tokenizer::search_through_funktions(funktionstable* funk_table,unsigned char
     funktionstable table = *(funk_table);
     for(int i = 0; i< 40; ++i){
         funk_var funk = (table.getfunk_var(i));
-        if(string_lib::isequal(funk.get_name(), input_arr)){
+        bool result= string_lib::isequal(funk.get_name(), input_arr);
+        if(result){
             return i+16; // is the value of starting index of where the main stuff is stored
         }
     }

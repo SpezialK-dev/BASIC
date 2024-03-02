@@ -9,3 +9,4 @@ Hier kommen projekte weite verbesserungs ideen rein, welche die codebase aufräu
 - [ ] copying the name of the funk var should be smarter and and go out of the loop if a stop has been found 
 - [ ] isequal should be fixed properly  
 - [ ] properly deal with garbage input
+- [ ] single char input acceptance

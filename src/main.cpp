@@ -41,10 +41,10 @@ int main(){
   //std::cout << return_test << std::endl;
   // testing funk var
   //funk_var testFunk{'x' ,test_sig, test2_sig};
-  variable_handling variables;
-  funktionstable funktions;
-  editing_window e;
-  e.raise_error(0);
+  variable_handling variables{};
+  funktionstable funktions{};
+  editing_window e{};
+  std::cout << "BASIC INTERPRETER 0.1.0\n"<< std::endl;
   e.open_editor(&funktions, &variables);
 }
 
