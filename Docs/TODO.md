@@ -10,3 +10,6 @@ Hier kommen projekte weite verbesserungs ideen rein, welche die codebase aufräu
 - [ ] isequal should be fixed properly  
 - [ ] properly deal with garbage input
 - [ ] single char input acceptance
+- [X] fix all Issues that valgrind finds 
+    - [ ] fix all the memmory leaks created through fixing the issues()
+- create a funktion to dealocate everything when closing the programm

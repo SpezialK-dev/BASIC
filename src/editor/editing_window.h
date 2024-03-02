@@ -7,7 +7,7 @@ class variable_handling;
 class editing_window
 {
 private:
-    unsigned char linebuffer[32767][120];//might have to optimize this cause this takes reserves a lot of memery should be around ~3-4 mbyte
+    unsigned char **linebuffer;//[32767][120];//might have to optimize this cause this takes reserves a lot of memery should be around ~3-4 mbyte
     //values are abatrary 
     const char error_msgs[20][250]{
         "LINE TO LONG", 
@@ -32,6 +32,10 @@ public:
 
 inline editing_window::editing_window()
 {
+    linebuffer = new unsigned char* [32767];
+    for(int i = 0; i < 32767; i++){
+        linebuffer[i] = new unsigned char[120];  
+    }
     currently_running=true;
     last_usedline = 0;
     //TODO preify this

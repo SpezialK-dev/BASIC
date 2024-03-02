@@ -12,7 +12,7 @@ private:
     // I sadly have to do it this way since there is no other way that currently works migth be a valid optimization at some point
     
 
-    funk_var all_funktions[40];
+    funk_var *all_funktions;
     b_var* (* func [40])(int number_param,b_var args[]){
         // 0
 
@@ -26,6 +26,7 @@ public:
 };
 
 funktionstable::funktionstable(){
+    all_funktions = new funk_var[40];
     unsigned char exit_sig[1]{0}; 
     unsigned char exit_name[5]{"EXIT"};
     all_funktions[0] = (funk_var{static_cast<unsigned char>(0),exit_sig, exit_name});
