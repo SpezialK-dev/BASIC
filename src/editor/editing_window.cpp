@@ -6,7 +6,7 @@ void editing_window::add_line(funktionstable* funkt_table, variable_handling* va
     int current_line;
     char c= 0;
     int index =0;
-    unsigned char input_arr[256];
+    unsigned char *input_arr = new unsigned char[256];
     //getting input from user 
     while(std::cin.get(c)){
         if(c == '\n' || index >= 121){
@@ -22,7 +22,7 @@ void editing_window::add_line(funktionstable* funkt_table, variable_handling* va
     
     //tokenizer stuff
     
-    unsigned char outputarr[256];
+    unsigned char *outputarr = new unsigned char[256];
     tokenizer::tokenize(funkt_table,variables_table,input_arr,outputarr,current_line);
 
     //adding the tokenizer ouput to the final array

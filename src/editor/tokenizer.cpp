@@ -33,11 +33,9 @@ void tokenizer::tokenize(funktionstable* funktable,variable_handling* variables_
     int saved_array_index{0};
     bool has_started=false;
     bool running = true;
-    unsigned char saved_array[128];
+    unsigned char *saved_array = new unsigned char[128];
     while(running){
-        //TODO maybe this creates a problem at the end of an array will have to check, since theoretically we could look outside of array 
-        // might have some edege conition problems right here
-        if(*(input_arr+index) !=' ' && *(input_arr+index+1) != '\0'  &&isalnum(*(input_arr+index+1))){
+        if(isalnum(*(input_arr+index))){
             starting_index = index;
             has_started=true;
         }
