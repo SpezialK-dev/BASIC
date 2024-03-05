@@ -15,7 +15,12 @@ int tokenizer::search_through_funktions(funktionstable* funk_table,unsigned char
 
 int tokenizer::search_through_variables(variable_handling* variables_table,unsigned char* input_arr){
     variable_handling variable_handling_inst = *(variables_table);
-    for(int i=0; i<128; ++i ){
+    //checking if the array is empty to check cause otherwies we will segfault
+    if((*variables_table).get_last_elem() == 255){
+        return 999;
+    }
+    int max_vars = (*variables_table).get_last_elem();
+    for(int i=0; i<max_vars; ++i ){
         b_var* current_variable = variable_handling_inst.get_bvar(i);
         if(string_lib::isequal((*current_variable).get_name(),input_arr)){
             return i+128;

@@ -79,7 +79,7 @@ void variable_handling::create_new_variable(unsigned char  name[], unsigned char
       variables[working_index] = new b_var(name, new unsigned char(3), char_pointer);
     }
     //increment last used objekt counter by 1
-    if(last_elem != 255){
+    if(last_elem < 254){
     ++last_elem;
     }
 }
@@ -108,9 +108,15 @@ void variable_handling::delete_variabel(unsigned char token){
 //might be replaced in the future so thats why name is in there but for now a slow 
 //variant 
 unsigned char variable_handling::find_space_in_variable(unsigned char *name){
+    if(last_elem==255){
+      last_elem = 0;
+    }
     return last_elem;
 }
 
 b_var* variable_handling::get_bvar(int index){
     return variables[index];
+}
+unsigned char variable_handling::get_last_elem(){
+  return last_elem;
 }

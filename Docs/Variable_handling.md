@@ -48,6 +48,7 @@ char last_numb = 0;
 
 Später kann man das effizienter machen, indem man die Sache alphabetisch sortiert und somit den zugriff eventuell schneller macht
 
+Aktuell ist es umgesetzt, dass wennd as array kommplett leer ist dann kriegt man 255 zurück, sobald man aber etwas reinfügen will dann wird es auf 0 gesetzt
 #### Type detection
 
 klene Feinheiten. Strings können mommentan keine ints an erster Stelle enthalten!!!
