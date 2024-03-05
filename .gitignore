@@ -5,3 +5,4 @@ BASIC
 .cache/*
 build/
 .vscode/*
+vgcore.*
