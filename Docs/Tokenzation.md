@@ -47,6 +47,7 @@ Hierfür wurde die Zeilennummer schon im Vorhinein aus dem Array entfernt.
 1. CHAR Array wird eingegeben. 
 2. Herausfiltern von denn verschiedenen Wörtern
 3. Der token wird gesucht 
+    3.1 wenn der Token ein LET ist wird dieser nicht reingeschrieben, sondern es wird eine Routine aufgerufen, welche einen neue variable definiert
 4. Token wird in ein weiteres Array reingeschrieben, welches dann zurück gegeben wird.
 
 

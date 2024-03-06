@@ -13,3 +13,4 @@ Hier kommen projekte weite verbesserungs ideen rein, welche die codebase aufräu
 - [X] fix all Issues that valgrind finds 
     - [ ] fix all the memmory leaks created through fixing the issues()
 - create a funktion to dealocate everything when closing the programm
+- [ ] maybe clean up the code for LET
