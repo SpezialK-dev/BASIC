@@ -31,7 +31,7 @@ public:
     static b_var* GOTO(int number_param,b_var args[]);
 
     //not sure of implementation
-    static b_var* LET(unsigned char* input);
+    static b_var* LET(int number_param,b_var args[]);
     //think of a way for strings
 };
 #endif 

@@ -34,6 +34,7 @@ funktionstable::funktionstable(){
     unsigned char let_sig[1]{0};//this might need fixing and puting stuff into some other code
     unsigned char let_name[4]{"LET"};
     all_funktions[1] = (funk_var{static_cast<unsigned char>(0),let_sig,let_name });//need to fix the type at some later time
+    func[1] = &funktions_dic::LET;
     unsigned char int_to_float_sig[1]{1};
     unsigned char int_to_float_name[13]{"INT_TO_FLOAT"};
     all_funktions[2] = (funk_var{static_cast<unsigned char>(2),int_to_float_sig, int_to_float_name});

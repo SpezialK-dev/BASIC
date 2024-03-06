@@ -87,6 +87,6 @@ b_var* funktions_dic::GOTO(int number_param,b_var args[]){
 
 }
 
-b_var* funktions_dic::LET(unsigned char* input){
+b_var* funktions_dic::LET(int number_param,b_var args[]){
 
 }
