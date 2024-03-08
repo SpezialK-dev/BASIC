@@ -30,28 +30,42 @@ int tokenizer::search_through_variables(variable_handling* variables_table,unsig
 }
 
 
+
 void tokenizer::tokenize(funktionstable* funktable,variable_handling* variables_table, unsigned char* input_arr,unsigned char* output, int current_linenumb){
     int line_buffer_index = 0; // at what position we are in the line buffer 
+    int variable_index = 0;
     int index{0};
     int starting_index{0};
     int ending_word_index{0};
     int saved_array_index{0};
-    bool has_started=false;
+    bool has_started_bool=false;
+    bool variable_found_bool =false;
+    bool variable_name_bool = true;
+    bool variable_value_bool = false;
+    bool variabel_value_started_bool = false; //needed to skip the first ' ' if needed
     bool running = true;
     unsigned char *saved_array = new unsigned char[128];
+    unsigned char *variable_name = new unsigned char[20];
+    unsigned char *variabl_value = new unsigned char[30];
     while(running){
         if(isalnum(*(input_arr+index))){
             starting_index = index;
-            has_started=true;
+            has_started_bool=true;
         }
-        if(has_started){
+        if(has_started_bool){
             if(*(input_arr+index) == ' ' || *(input_arr+index) == '\0' ){
                 saved_array[saved_array_index] = '\0';
                 ending_word_index = index;
                 saved_array_index = 0;
                 int value_to_safe{999};
                 value_to_safe = search_through_funktions(funktable, saved_array);
-                if(value_to_safe != 999){
+                if(value_to_safe == 17){
+                    //TODO add code to create funktions
+                    variable_found_bool = true;
+                    has_started_bool = false;
+                }
+                
+                if(value_to_safe != 999 && value_to_safe != 17){//exclude 17 because its the let funktion
                     std::cout << "found funktion" << value_to_safe << std::endl;
                     //TODO add syntax checking to see if next 2 variables are of needed type and save type 
                     //TODO add code that then internet skips to the next iteration to scan for the next word in the table, thus adding the next token
@@ -60,7 +74,7 @@ void tokenizer::tokenize(funktionstable* funktable,variable_handling* variables_
 
                     //cleaning up variables
                     starting_index = ending_word_index;
-                    has_started = false;
+                    has_started_bool = false;
                     continue;//skip
                 }
                 //code snippet for variable stuff
@@ -71,7 +85,7 @@ void tokenizer::tokenize(funktionstable* funktable,variable_handling* variables_
 
                     //cleaning up variables
                     starting_index = ending_word_index;
-                    has_started = false;
+                    has_started_bool = false;
                     continue;//skip
                 }
                 //If there is no variable we should create one should add a catch statment if it does not fit into the variable roster 
@@ -83,6 +97,31 @@ void tokenizer::tokenize(funktionstable* funktable,variable_handling* variables_
             }
         }
         //my attempt at fixing just a word without empty space afterwards
+        if(variable_found_bool){
+            //code for getting the variable name into an array
+            if(variable_name){
+                //should break if we get the = sign since that is the part where the value starts
+                if(*(input_arr+index) == '=' || variable_index >= 19 ){
+                    variable_name[20] = '\0'; // this is hardcoded since there should not be a other value needs to be changed if name is longer
+                    variable_name_bool = false;
+                    variable_value_bool = true;
+                }
+                //code that adds part of the name that adds to the name array, also it ignores whitespaces
+                if(*(input_arr+index) != ' '){
+                    variable_name[variable_index] = *(input_arr+index);
+                    variable_index++;
+                }
+            }
+            //code for finding the value the value
+            if(variable_value_bool){
+                if(variabel_value_started_bool){
+                    //since the value has started, we will end at the last 
+                    if(*(input_arr+index) == ' '){//TODO add == to ' " 'since we stuff for arrays does not work
+                        
+                    }
+                }
+            }
+        }
         if(*(input_arr+index) == '\0'){
             running = false;
         }
