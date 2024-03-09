@@ -42,6 +42,7 @@ void tokenizer::tokenize(funktionstable* funktable,variable_handling* variables_
     bool variable_found_bool =false;
     bool variable_name_bool = true;
     bool variable_value_bool = false;
+    bool variable_finished = false;
     bool variabel_value_started_bool = false; //needed to skip the first ' ' if needed
     bool running = true;
     unsigned char *saved_array = new unsigned char[128];
@@ -99,27 +100,45 @@ void tokenizer::tokenize(funktionstable* funktable,variable_handling* variables_
         //my attempt at fixing just a word without empty space afterwards
         if(variable_found_bool){
             //code for getting the variable name into an array
-            if(variable_name){
+            if(variable_name_bool){
                 //should break if we get the = sign since that is the part where the value starts
                 if(*(input_arr+index) == '=' || variable_index >= 19 ){
                     variable_name[20] = '\0'; // this is hardcoded since there should not be a other value needs to be changed if name is longer
                     variable_name_bool = false;
                     variable_value_bool = true;
+                    variable_index = 0;
                 }
                 //code that adds part of the name that adds to the name array, also it ignores whitespaces
-                if(*(input_arr+index) != ' '){
+                if(*(input_arr+index) != ' ' && variable_value_bool == false){
                     variable_name[variable_index] = *(input_arr+index);
                     variable_index++;
                 }
             }
             //code for finding the value the value
             if(variable_value_bool){
+                if(isalnum(*(input_arr+index))){
+                    variabel_value_started_bool = true;
+                }
                 if(variabel_value_started_bool){
                     //since the value has started, we will end at the last 
-                    if(*(input_arr+index) == ' '){//TODO add == to ' " 'since we stuff for arrays does not work
-                        
+                    if(*(input_arr+index) == ' ' || variable_index == 29){//TODO add == to ' " 'since we stuff for arrays does not work
+                        variabl_value[30] = '\0';
+                        variable_finished = true;
                     }
+                    variabl_value[variable_index] = *(input_arr+index);
+                    variable_index++;
                 }
+            }
+            if(variable_finished){
+                //reseting all the variables 
+                bool variable_found_bool =false;
+                bool variable_name_bool = true;
+                bool variable_value_bool = false;
+                bool variable_finished = false;
+                bool variabel_value_started_bool = false;
+                //TODO Clean the arrays.
+
+                (*variables_table).create_new_variable(variable_name,variabl_value);
             }
         }
         if(*(input_arr+index) == '\0'){
