@@ -121,7 +121,7 @@ void tokenizer::tokenize(funktionstable* funktable,variable_handling* variables_
                 }
                 if(variabel_value_started_bool){
                     //since the value has started, we will end at the last 
-                    if(*(input_arr+index) == ' ' || variable_index == 29){//TODO add == to ' " 'since we stuff for arrays does not work
+                    if(*(input_arr+index) == ' ' || variable_index == 29 || *(input_arr+index) == '\0'){//TODO add == to ' " 'since we stuff for arrays does not work
                         variabl_value[30] = '\0';
                         variable_finished = true;
                     }
@@ -139,6 +139,7 @@ void tokenizer::tokenize(funktionstable* funktable,variable_handling* variables_
                 //TODO Clean the arrays.
 
                 (*variables_table).create_new_variable(variable_name,variabl_value);
+                std::cout<< (*(*variables_table).get_bvar(0)).get_name();
             }
         }
         if(*(input_arr+index) == '\0'){
