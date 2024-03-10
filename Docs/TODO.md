@@ -15,3 +15,4 @@ Hier kommen projekte weite verbesserungs ideen rein, welche die codebase aufräu
 - create a funktion to dealocate everything when closing the programm
 - [ ] maybe clean up the code for LET
 - [ ] add String methode should not be to hard
+- [ ] Fix float conversion error
