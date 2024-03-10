@@ -1,6 +1,6 @@
 #include "ctype.h"
 #include "variable_handling.h"
-#include <iostream>
+//#include <iostream>
 
 long unsigned int pow_10(int exponent){
     long unsigned int x = 1;
@@ -92,7 +92,7 @@ void variable_handling::create_new_variable(unsigned char  *name, unsigned char 
       // the part that handels all float stuff
       if(value[i]=='.'){
         is_float = true;
-        float_descion_point = i++;//should be incremented since we start with the .  //might be unsafe
+        float_descion_point = ++i;//should be incremented since we start with the .  //might be unsafe
         break;
       }
       //just the normal adding part.
@@ -103,19 +103,20 @@ void variable_handling::create_new_variable(unsigned char  *name, unsigned char 
       //inictal variables
       int decimal_part_float = 0;
       int float_counter = 0;
-      float base_float = static_cast<float>(int_part);
       for(int counter = float_descion_point; counter < 120; ++counter){
         //break condition if the array is smaller sized
-        if((value[counter]-'0') == '\0' || (value[counter]-'0') == ' '){
+        if((value[counter]-'0') == '\0' || (value[counter]-'0') == ' ' || (value[counter]-'0') == -48){
+          //std::cout << (value[counter]-'0') <<std::endl;
           break;
         }
+        //std::cout << counter <<" : " << "(value[counter]-'0') : " << (value[counter]-'0') << std::endl; 
         decimal_part_float = decimal_part_float * 10 + (value[counter]-'0');
         float_counter++;
       }
       //actual creation and conversion part
-      float result = float(int_part) +(float(decimal_part_float)/float(pow_10(float_counter)));
+      float result = float(int_part) + (float(decimal_part_float)/float(pow_10(float_counter)));
       variables[working_index] = new b_var(name, new unsigned char(1), new float{result});
-    
+      //std::cout << "name: " << name<<" value: "<< result <<std::endl;
     }
     //default response should be just int, so as a fallback it should just ignore everything that comes after the . 
     else{

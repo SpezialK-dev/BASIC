@@ -67,7 +67,7 @@ void tokenizer::tokenize(funktionstable* funktable,variable_handling* variables_
                 }
                 
                 if(value_to_safe != 999 && value_to_safe != 17){//exclude 17 because its the let funktion
-                    std::cout << "found funktion" << value_to_safe << std::endl;
+                    //std::cout << "found funktion" << value_to_safe << std::endl;
                     //TODO add syntax checking to see if next 2 variables are of needed type and save type 
                     //TODO add code that then internet skips to the next iteration to scan for the next word in the table, thus adding the next token
                     *(output+line_buffer_index) = value_to_safe;
@@ -139,7 +139,6 @@ void tokenizer::tokenize(funktionstable* funktable,variable_handling* variables_
                 //TODO Clean the arrays.
 
                 (*variables_table).create_new_variable(variable_name,variabl_value);
-                std::cout<< (*(*variables_table).get_bvar(0)).get_name();
             }
         }
         if(*(input_arr+index) == '\0'){
