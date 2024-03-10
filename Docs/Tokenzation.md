@@ -40,6 +40,8 @@ ich werde mich für das Erste auch an diesen Plan halten, da ich es mir hilft we
 
 Bei mir Fangen alle Funktionen einfach bei 16 an, ich kann später noch eine Anpassung eventuell vornehmen wo es wirklich eine Trennung zwischen Operatoren und Funktionen gibt aber mommentan ist das erstmal noch nicht geplant
 
+
+Der Floating point numeric COnst wurde rausgenommen, es wird einfach jetzt geschaut ib ein . sich dardrinne befindet.
 ### Generelle Idee zum Ablauf
 
 Hierfür wurde die Zeilennummer schon im Vorhinein aus dem Array entfernt.

@@ -37,6 +37,7 @@ werden wir in create new variable handeln
 
 wir allokieren memory mit new keyword für den wert, nachdem wir denn Typen festgestellt haben. 
 
+wir schauen ist der erste Teil des wertes ein int, dann soll er bitte anfangen einen Int zu erstellen finden wir einen . in dem ganzen, dann wird daraus ein float gemacht.
 
 #### platzierung des items im array 
 

@@ -92,7 +92,7 @@ void variable_handling::create_new_variable(unsigned char  *name, unsigned char 
       // the part that handels all float stuff
       if(value[i]=='.'){
         is_float = true;
-        float_descion_point = i;
+        float_descion_point = i++;//should be incremented since we start with the .  //might be unsafe
         break;
       }
       //just the normal adding part.
@@ -100,7 +100,20 @@ void variable_handling::create_new_variable(unsigned char  *name, unsigned char 
     }
     //handling optional float part
     if(is_float){
-      float result = 0;
+      //inictal variables
+      int decimal_part_float = 0;
+      int float_counter = 0;
+      float base_float = static_cast<float>(int_part);
+      for(int counter = float_descion_point; counter < 120; ++counter){
+        //break condition if the array is smaller sized
+        if((value[counter]-'0') == '\0' || (value[counter]-'0') == ' '){
+          break;
+        }
+        decimal_part_float = decimal_part_float * 10 + (value[counter]-'0');
+        float_counter++;
+      }
+      //actual creation and conversion part
+      float result = float(int_part) +(float(decimal_part_float)/float(pow_10(float_counter)));
       variables[working_index] = new b_var(name, new unsigned char(1), new float{result});
     
     }
@@ -109,8 +122,7 @@ void variable_handling::create_new_variable(unsigned char  *name, unsigned char 
 
      variables[working_index] = new b_var(name, new unsigned char(1), new int(int_part));
     }
-    //variables[working_index] = new b_var(name, new unsigned char(1), new float{result});
-   
+    //TODO String part
   }
   //increment last used objekt counter by 1
   if(last_elem < 254){

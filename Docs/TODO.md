@@ -14,3 +14,4 @@ Hier kommen projekte weite verbesserungs ideen rein, welche die codebase aufräu
     - [ ] fix all the memmory leaks created through fixing the issues()
 - create a funktion to dealocate everything when closing the programm
 - [ ] maybe clean up the code for LET
+- [ ] add String methode should not be to hard
