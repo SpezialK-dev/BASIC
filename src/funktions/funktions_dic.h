@@ -13,6 +13,8 @@ private:
 public:
     static b_var* EXIT(int number_param,b_var args[]);
 
+    static b_var* RUN(int number_param,b_var args[]);
+
     //maybe have to replace this with one methode
     static b_var* PRINT(int number_param,b_var args[]);
 

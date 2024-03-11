@@ -5,6 +5,10 @@ b_var* funktions_dic::EXIT(int number_param,b_var args[]){
     // make another way for this
 }
 
+b_var* funktions_dic::RUN(int number_param,b_var args[]){
+    //maye add some code ?? 
+}
+
 // print
 //maybe replace with one function
 b_var* funktions_dic::PRINT(int number_param,b_var args[]){
