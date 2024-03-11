@@ -141,10 +141,13 @@ void tokenizer::tokenize(funktionstable* funktable,variable_handling* variables_
                 (*variables_table).create_new_variable(variable_name,variabl_value);
             }
         }
-        if(*(input_arr+index) == '\0'){
+        //safty check
+        if(*(input_arr+index) == '\0' || index == 119 ){
             running = false;
+            output[index] = '\0';
         }
         ++index;
         
     }
+    
 }
