@@ -1,6 +1,6 @@
 #include "executor.h"
 
-void executor::execute(editing_window *window){
+void executor::execute(editing_window *window, funktionstable* funktable,variable_handling* variables_table,){
     bool running =true;
     while(running){
         for(int i = 0; i< 120; ++i){
@@ -9,7 +9,13 @@ void executor::execute(editing_window *window){
                 break;
             }
             //funktion check
-            if(*((*window).get_linebuffer_line(current_line)+i) >= 16&& *((*window).get_linebuffer_line(current_line)+i) <= 127 ){
+            //empty space from 56 till 127 since that is the space not in use rn.
+            if(*((*window).get_linebuffer_line(current_line)+i) >= 16 && *((*window).get_linebuffer_line(current_line)+i) < 56 ){
+                (*((*window).get_linebuffer_line(current_line)+i) -16);
+            }
+            //variable code 
+            //255 should be the max number if I remeber correctly, will have to check again through
+            if(*((*window).get_linebuffer_line(current_line)+i) >= 128 && *((*window).get_linebuffer_line(current_line)+i) < 255 ){
 
             }
         }
