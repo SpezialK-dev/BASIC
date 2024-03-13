@@ -22,12 +22,13 @@ void executor::execute(editing_window *window, funktionstable* funktable,variabl
             //variable code 
             //255 should be the max number if I remeber correctly, will have to check again through
             if(*((*window).get_linebuffer_line(current_line)+i) >= 128 && *((*window).get_linebuffer_line(current_line)+i) < 255 ){
-                
+                current_variables[var_index] = (*variables_table).get_bvar(*((*window).get_linebuffer_line(current_line)+i) -128);
+                var_index++;
             }
         }
         //code for getting through the funktion array
         for(int i = 0; i< 120; ++i){ //TODO check if 120 is enought not sure yet
-            
+       
         }
 
         ++current_line;
