@@ -12,9 +12,7 @@ void executor::execute(editing_window *window, funktionstable* funktable,variabl
             //empty space from 56 till 127 since that is the space not in use rn.
             if(*((*window).get_linebuffer_line(current_line)+i) >= 16 && *((*window).get_linebuffer_line(current_line)+i) < 56 ){
                 //getting the current funktion and putting it into the stack of saved funktions that we are currently using
-                current_funcs[func_index] = static_cast<b_var* (* )(int number_param,b_var args[])>
-                //the part where we get the value
-                ((*funktable).get_funk_var_pointer((*((*window).get_linebuffer_line(current_line)+i) -16)));
+                current_funcs[func_index] = static_cast<b_var* (* )(int number_param,b_var args[])>((*funktable).get_funk_var_pointer((*((*window).get_linebuffer_line(current_line)+i) -16)));
                 
                 ++func_index;
                 //TODO add limit for max of 40 funktions per line which should never be hit lol
@@ -28,7 +26,10 @@ void executor::execute(editing_window *window, funktionstable* funktable,variabl
         }
         //code for getting through the funktion array
         for(int i = 0; i< 120; ++i){ //TODO check if 120 is enought not sure yet
-       
+            //if we have a funktion to run run it
+            if(func_index != 0){
+                
+            }
         }
 
         ++current_line;

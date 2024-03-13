@@ -31,7 +31,7 @@ int tokenizer::search_through_variables(variable_handling* variables_table,unsig
 
 
 
-void tokenizer::tokenize(funktionstable* funktable,variable_handling* variables_table, unsigned char* input_arr,unsigned char* output, int current_linenumb){
+bool tokenizer::tokenize(funktionstable* funktable,variable_handling* variables_table, unsigned char* input_arr,unsigned char* output, int current_linenumb){
     int line_buffer_index = 0; // at what position we are in the line buffer 
     int variable_index = 0;
     int index{0};
@@ -65,6 +65,12 @@ void tokenizer::tokenize(funktionstable* funktable,variable_handling* variables_
                     variable_found_bool = true;
                     has_started_bool = false;
                 }
+                // run code
+                if(value_to_safe == 17){
+                    //TODO add code to create funktions
+                    variable_found_bool = true;
+                    has_started_bool = false;
+                }
                 
                 if(value_to_safe != 999 && value_to_safe != 17){//exclude 17 because its the let funktion
                     //std::cout << "found funktion" << value_to_safe << std::endl;
@@ -76,7 +82,7 @@ void tokenizer::tokenize(funktionstable* funktable,variable_handling* variables_
                     //cleaning up variables
                     starting_index = ending_word_index;
                     has_started_bool = false;
-                    continue;//skip
+                    return true;
                 }
                 //code snippet for variable stuff
                 value_to_safe = search_through_variables(variables_table,saved_array);
@@ -149,5 +155,6 @@ void tokenizer::tokenize(funktionstable* funktable,variable_handling* variables_
         ++index;
         
     }
+    return false;
     
 }

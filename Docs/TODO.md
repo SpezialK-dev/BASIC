@@ -17,3 +17,4 @@ Hier kommen projekte weite verbesserungs ideen rein, welche die codebase aufräu
 - [ ] add String methode should not be to hard
 - [ ] Fix float conversion error
     they semi work now, but things starting with 0 just get cut of for no reason, also weird things happen with finding ending 
+- [ ] create a typedef for the funktions

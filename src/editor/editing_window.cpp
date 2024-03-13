@@ -1,6 +1,7 @@
 #include <iostream>
 #include "editing_window.h"
 #include "tokenizer.h"
+#include "../execution/executor.h"
 
 void editing_window::add_line(funktionstable* funkt_table, variable_handling* variables_table){
     int current_line;
@@ -23,11 +24,19 @@ void editing_window::add_line(funktionstable* funkt_table, variable_handling* va
     //tokenizer stuff
     
     unsigned char *outputarr = new unsigned char[256];
-    tokenizer::tokenize(funkt_table,variables_table,input_arr,outputarr,current_line);
+    bool run_executor = false;
+    run_executor = tokenizer::tokenize(funkt_table,variables_table,input_arr,outputarr,current_line);
+    //if code to run the current program
+    if(run_executor){
 
-    //adding the tokenizer ouput to the final array
-    copy_to_line_buffer(outputarr, current_line);
-    ++last_usedline; //TODO move to add to linebuffer
+        executor execution;
+        execution.execute(this, funkt_table,variables_table);
+    }else{
+
+        //adding the tokenizer ouput to the final array
+        copy_to_line_buffer(outputarr, current_line);
+        ++last_usedline; //TODO move to add to linebuffer
+    }
 }
 void editing_window::open_editor(funktionstable* funkt_table, variable_handling* variables_table){
     //main programm loop 

@@ -13,7 +13,7 @@ private:
     static int search_through_variables(variable_handling* variables_table, unsigned char* input_arr);
 public:
     inline tokenizer(unsigned char* whole_input);
-    static void tokenize(funktionstable* funktable,variable_handling* variables_table, unsigned char* input_arr, unsigned char* output, int current_linenumb);
+    static bool tokenize(funktionstable* funktable,variable_handling* variables_table, unsigned char* input_arr, unsigned char* output, int current_linenumb);
 };
 
 tokenizer::tokenizer(unsigned char* whole_input)
