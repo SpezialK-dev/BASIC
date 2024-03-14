@@ -49,6 +49,10 @@ funktionstable::funktionstable(){
     unsigned char float_to_int_name[13]{"FLOAT_TO_INT"};
     all_funktions[4] = (funk_var{static_cast<unsigned char>(1),float_to_int_sig, float_to_int_name});
     func[4] = &funktions_dic::FLOAT_TO_INT;
+    unsigned char print_sig[2]{4,'\0'};
+    unsigned char printname[6]{"PRINT"};
+    all_funktions[5] = (funk_var{static_cast<unsigned char>(0),print_sig, printname});
+    func[5] = &funktions_dic::PRINT;
     
 
 

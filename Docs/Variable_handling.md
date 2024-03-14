@@ -75,6 +75,8 @@ Rauskommende Werte haben folgende Bedeutungen
 
 3 = String
 
+4 = Any Type For funktions that handle any type since those exist aswell like print
+
 Typen welche ich eventuell hinzufügen will:
 
 - Arrays
