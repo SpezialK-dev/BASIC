@@ -38,7 +38,10 @@ void executor::execute(editing_window *window, funktionstable* funktable,variabl
                 }
             }
         }
-
+        //just a safty precaution
+        if(current_line == 32766){
+            break;
+        }
         ++current_line;
     }
 }

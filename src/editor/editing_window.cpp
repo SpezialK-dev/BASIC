@@ -28,9 +28,10 @@ void editing_window::add_line(funktionstable* funkt_table, variable_handling* va
     run_executor = tokenizer::tokenize(funkt_table,variables_table,input_arr,outputarr,current_line);
     //if code to run the current program
     if(run_executor){
-
+        std::cout << "RUNNING CURRENT PROGRAM" << std::endl;
         executor execution;
         execution.execute(this, funkt_table,variables_table);
+        std::cout << "END RUNNING CURRENT PROGRAM" << std::endl;
     }else{
 
         //adding the tokenizer ouput to the final array
