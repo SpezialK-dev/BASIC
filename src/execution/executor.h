@@ -12,7 +12,7 @@ private:
     int func_index;
     int var_index;
     int current_line;
-    b_var* (* current_funcs [40])(int number_param,b_var args[]);
+    funktionstable::funktion_sig current_funcs [40];
     b_var* *current_variables = new b_var*[120];// we will never execde 120 variables in a single line if yes we have a major problem but allocating more space is wastefull
     
 public:

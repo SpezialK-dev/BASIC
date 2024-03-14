@@ -7,22 +7,24 @@
 
 class funktionstable
 {
+//had to switch this bc of the typedef
+public:
+    typedef b_var* (* funktion_sig)(int number_param,b_var args[]);
+    inline funktionstable();
+    funk_var getfunk_var(int index);
+    funktion_sig get_funk_var_pointer(int i);
+    
 private:
 //will have to be hardcoded here since, it should not just be assigned during initalzation but rather is aways the same
     // I sadly have to do it this way since there is no other way that currently works migth be a valid optimization at some point
-    
-
     funk_var *all_funktions;
-    b_var* (* func [40])(int number_param,b_var args[]){
+    funktion_sig func[40]{
         // 0
 
     };
     //TODO add funktion array (maybe make it public???)
     //TODO make the actuall pointer array
-public:
-    inline funktionstable();
-    funk_var getfunk_var(int index);
-    void* get_funk_var_pointer(int i);
+
 };
 
 funktionstable::funktionstable(){

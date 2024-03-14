@@ -8,7 +8,7 @@ funk_var funktionstable::getfunk_var(int index){
 }
 
 
-void* funktionstable::get_funk_var_pointer(int i){
-
+funktionstable::funktion_sig funktionstable::get_funk_var_pointer(int i){
+    return func[i];
 }
 
