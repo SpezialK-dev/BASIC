@@ -66,10 +66,11 @@ bool tokenizer::tokenize(funktionstable* funktable,variable_handling* variables_
                     has_started_bool = false;
                 }
                 // run code
-                if(value_to_safe == 17){
+                if(value_to_safe == 18){
                     //TODO add code to create funktions
                     variable_found_bool = true;
                     has_started_bool = false;
+                    return true;
                 }
                 
                 if(value_to_safe != 999 && value_to_safe != 17){//exclude 17 because its the let funktion
@@ -82,7 +83,7 @@ bool tokenizer::tokenize(funktionstable* funktable,variable_handling* variables_
                     //cleaning up variables
                     starting_index = ending_word_index;
                     has_started_bool = false;
-                    return true;
+                    
                 }
                 //code snippet for variable stuff
                 value_to_safe = search_through_variables(variables_table,saved_array);

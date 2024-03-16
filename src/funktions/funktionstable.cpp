@@ -1,10 +1,10 @@
 #include "funktionstable.h"
 
-funk_var funktionstable::getfunk_var(int index){
+funk_var* funktionstable::getfunk_var(int index){
     if(index >= 40){
-        return all_funktions[0];
+        return &all_funktions[0];
     }
-    return all_funktions[index];
+    return &all_funktions[index];
 }
 
 

@@ -11,7 +11,7 @@ class funktionstable
 public:
     typedef b_var* (* funktion_sig)(int number_param,b_var args[]);
     inline funktionstable();
-    funk_var getfunk_var(int index);
+    funk_var* getfunk_var(int index);
     funktion_sig get_funk_var_pointer(int i);
     
 private:
