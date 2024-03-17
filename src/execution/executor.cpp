@@ -26,6 +26,7 @@ void executor::execute(editing_window *window, funktionstable* funktable,variabl
                 var_index++;
             }
         }
+        //EXECUTION CODE!!
         //code for getting through the funktion array
         for(int i = 0; i< 120; ++i){ //TODO check if 120 is enought not sure yet
             //if we have a funktion to run run it
@@ -37,12 +38,6 @@ void executor::execute(editing_window *window, funktionstable* funktable,variabl
                     variables_to_give_to_func[i] = current_variables[var_index-i];//copying the value into 
                 }
             }
-        }
-        //if we have a funktion in stack we should execuite it 
-        if(func_index != 0){
-
-
-            //TODO clean up afterwards
         }
         //just a safty precaution
         if(current_line == 32766){
