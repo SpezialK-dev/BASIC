@@ -15,7 +15,7 @@ void executor::execute(editing_window *window, funktionstable* funktable,variabl
             if(*((*window).get_linebuffer_line(current_line)+i) >= 16 && *((*window).get_linebuffer_line(current_line)+i) < 56 ){
                 //getting the current funktion and putting it into the stack of saved funktions that we are currently using
                 current_funcs[func_index] = static_cast<funktionstable::funktion_sig>((*funktable).get_funk_var_pointer((*((*window).get_linebuffer_line(current_line)+i) -16)));
-                current_funcs_names[func_index] = (*funktable).getfunk_var((*((*window).get_linebuffer_line(current_line)+i) -16));
+                current_funcs_names[func_index] = static_cast<funk_var*>((*funktable).getfunk_var( (*((*window).get_linebuffer_line(current_line)+i) -16) ));
                 ++func_index;
                 //TODO add limit for max of 40 funktions per line which should never be hit lol
             }
