@@ -24,3 +24,7 @@ Dabei sollten wir nur 1 Klasse benötigen
 # Klassen design
 
 executor.cpp
+
+## Umsetztung
+
+wir werden variabeln in als pointer in einem array speichern und das selbe für funktionen machen, wenn wir mehr als eine Funtkion haben, dann soll er durch die 

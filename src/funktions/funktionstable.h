@@ -9,7 +9,7 @@ class funktionstable
 {
 //had to switch this bc of the typedef
 public:
-    typedef b_var* (* funktion_sig)(int number_param,b_var args[]);
+    typedef b_var* (* funktion_sig)(int number_param,b_var* args[]);
     inline funktionstable();
     funk_var* getfunk_var(int index);
     funktion_sig get_funk_var_pointer(int i);
