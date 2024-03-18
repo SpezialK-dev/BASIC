@@ -40,6 +40,9 @@ void executor::execute(editing_window *window, funktionstable* funktable,variabl
                 }
                 *current_funcs[i](param_count,variables_to_give_to_func );
             }
+            if(func_index == i){
+                break;
+            }
         }
         //just a safty precaution
         if(current_line == 32766){
