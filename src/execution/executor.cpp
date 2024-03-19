@@ -31,7 +31,7 @@ void executor::execute(editing_window *window, funktionstable* funktable,variabl
         for(int i = 0; i< 120; ++i){ //TODO check if 120 is enought not sure yet
             //if we have a funktion to run run it
             if(func_index != 0){
-                int param_count = string_lib::uns_strlen((*current_funcs_names[func_index]).get_type_signature());
+                int param_count = string_lib::uns_strlen((*current_funcs_names[i]).get_type_signature());
                 b_var* variables_to_give_to_func[10];
                 //putting the variables into the current funktion and then exeucint that value
                 for(int i = 0; i< param_count; i++){

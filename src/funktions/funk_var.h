@@ -30,7 +30,10 @@ funk_var::funk_var(unsigned char inp_return_type,unsigned char inp_type_signatur
 
 funk_var::funk_var(){
     return_type = 0;
-    type_signature[0] = 0;
+    for(int i = 0; i< 9 ; i++){
+        type_signature[i] = 0;
+    }
     type_signature[9] = '\0';
+    
 }
 #endif 

@@ -109,8 +109,8 @@ bool tokenizer::tokenize(funktionstable* funktable,variable_handling* variables_
             //code for getting the variable name into an array
             if(variable_name_bool){
                 //should break if we get the = sign since that is the part where the value starts
-                if(*(input_arr+index) == '=' || variable_index >= 19 ){
-                    variable_name[20] = '\0'; // this is hardcoded since there should not be a other value needs to be changed if name is longer
+                if(*(input_arr+index) == '=' || variable_index > 19 ){
+                    variable_name[19] = '\0'; // this is hardcoded since there should not be a other value needs to be changed if name is longer
                     variable_name_bool = false;
                     variable_value_bool = true;
                     variable_index = 0;
@@ -129,7 +129,7 @@ bool tokenizer::tokenize(funktionstable* funktable,variable_handling* variables_
                 if(variabel_value_started_bool){
                     //since the value has started, we will end at the last 
                     if(*(input_arr+index) == ' ' || variable_index == 29 || *(input_arr+index) == '\0'){//TODO add == to ' " 'since we stuff for arrays does not work
-                        variabl_value[30] = '\0';
+                        variabl_value[29] = '\0';
                         variable_finished = true;
                     }
                     variabl_value[variable_index] = *(input_arr+index);
