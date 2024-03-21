@@ -31,7 +31,8 @@ b_var::b_var(unsigned char in_name[], unsigned char *in_type, void* in_pointer )
     pointer = in_pointer;
 }
 b_var::b_var(){
-    type =0;
+    type = new unsigned char;
+    *type = 0;
     char no_name[20]{"NOTDEFINED"};
     for(int i = 0; i< 19; ++i){
       name[i] = no_name[i];
