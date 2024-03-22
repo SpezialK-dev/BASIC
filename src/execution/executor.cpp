@@ -36,7 +36,8 @@ void executor::execute(editing_window *window, funktionstable* funktable,variabl
                 //putting the variables into the current funktion and then exeucint that value
                 for(int i = 0; i< param_count; i++){
                     //TODO add some safty checks to not go out of index
-                    variables_to_give_to_func[i] = current_variables[var_index-i];//copying the value into 
+                    int value_to_access = var_index - (i+1); //we want to get to top value of the stack and then put that into our funktion
+                    variables_to_give_to_func[i] = current_variables[value_to_access];//copying the value into 
                 }
                 *current_funcs[i](param_count,variables_to_give_to_func );
             }
