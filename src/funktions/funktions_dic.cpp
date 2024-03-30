@@ -19,8 +19,9 @@ b_var* funktions_dic::PRINT(int number_param,b_var* args[]){
         std::cout << *(static_cast<float*>((*args[0]).get_pointer())) <<std::endl;
     }else if(type == 3){
         // not sure might neeed not need to dereference this its supposed to print out everything
-        std::cout << (static_cast<char*>((*args[0]).get_pointer())) <<std::endl;
-    } 
+        std::cout << *(static_cast<char*>((*args[0]).get_pointer())) <<std::endl;
+    }
+    return new b_var; // needed to not crash on certain CPU's since return value is needed 
 }
 
 b_var* funktions_dic::PLUS(int number_param,b_var* args[]){

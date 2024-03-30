@@ -17,4 +17,5 @@ Hier kommen projekte weite verbesserungs ideen rein, welche die codebase aufräu
 - [ ] add String methode should not be to hard
 - [ ] Fix float conversion error
     they semi work now, but things starting with 0 just get cut of for no reason, also weird things happen with finding ending 
-- [ ] create a typedef for the funktions
+- [X] create a typedef for the funktions
+- [ ] make funktions always return a variable, to prevent crashes on certain cpus. [Source](https://stackoverflow.com/questions/47899971/c-getting-error-illegal-instruction-core-dumped-upon-bitwise-or-operatio)
