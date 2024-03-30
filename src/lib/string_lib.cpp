@@ -57,7 +57,7 @@ bool string_lib::isequal(unsigned char* a,unsigned char* b){
 int string_lib::uns_strlen(unsigned char* input_arr){
     int counter =0;
     while(*(input_arr+counter) != '\0'){
-        if(*(input_arr+counter) != '\0')break;//idk maybe as a precaution 
+        if(*(input_arr+counter) == '\0')break;//idk maybe as a precaution 
         ++counter;
     }
     return counter;
