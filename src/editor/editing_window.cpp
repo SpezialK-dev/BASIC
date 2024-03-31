@@ -52,18 +52,20 @@ void editing_window::raise_error(int error_code){
 int editing_window::get_line_number(unsigned char* input_line){
     int i = 0;
     int result = 0;
+    bool found_input = false;
     //code to check for line numbers 
     while(i< 128){
         if(std::isalpha(input_line[i])){
             break;
         }
         if(std::isdigit(input_line[i])){
+            found_input = true;
             result = result * 10 + (input_line[i]-'0');
             input_line[i] = ' ';//todo make a more proper fix out of this
         }
         i++;
     }
-    if(result == 0){
+    if(!found_input){
         // as a fallback if no line is specified
         result = last_usedline;
     }
