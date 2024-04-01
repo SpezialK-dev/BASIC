@@ -22,7 +22,7 @@ int tokenizer::search_through_variables(variable_handling* variables_table,unsig
     int max_vars = (*variables_table).get_last_elem();
     for(int i=0; i<max_vars; ++i ){
         b_var* current_variable = variable_handling_inst.get_bvar(i);
-        if(string_lib::isequal((*current_variable).get_name(),input_arr)){
+        if(string_lib::isequal(current_variable->get_name(),input_arr)){
             return i+128;
         }
     }
@@ -32,8 +32,9 @@ int tokenizer::search_through_variables(variable_handling* variables_table,unsig
 
 
 bool tokenizer::tokenize(funktionstable* funktable,variable_handling* variables_table, unsigned char* input_arr,unsigned char* output, int current_linenumb){
-    int line_buffer_index = 0; // at what position we are in the line buffer 
-    int variable_index = 0;
+    int line_buffer_index{0}; // at what position we are in the line buffer 
+    int variable_index{0};
+    int output_buffer_index{0};
     int index{0};
     int starting_index{0};
     int ending_word_index{0};
@@ -73,22 +74,25 @@ bool tokenizer::tokenize(funktionstable* funktable,variable_handling* variables_
                     return true;
                 }
                 
-                if(value_to_safe != 999 && value_to_safe != 17){//exclude 17 because its the let funktion
+                if(value_to_safe != 999 && value_to_safe != 17 && value_to_safe != 18){//exclude 17 because its the let funktion
                     //std::cout << "found funktion" << value_to_safe << std::endl;
                     //TODO add syntax checking to see if next 2 variables are of needed type and save type 
                     //TODO add code that then internet skips to the next iteration to scan for the next word in the table, thus adding the next token
-                    *(output+line_buffer_index) = value_to_safe;
+                    *(output+output_buffer_index) = value_to_safe;
+                    output_buffer_index++;
                     line_buffer_index++;
 
                     //cleaning up variables
                     starting_index = ending_word_index;
                     has_started_bool = false;
+                    continue;
                     
                 }
                 //code snippet for variable stuff
                 value_to_safe = search_through_variables(variables_table,saved_array);
                 if(value_to_safe != 999){
-                    *(output+line_buffer_index) = value_to_safe;
+                    *(output+output_buffer_index) = value_to_safe;
+                    output_buffer_index++;
                     line_buffer_index++;
 
                     //cleaning up variables
@@ -110,7 +114,7 @@ bool tokenizer::tokenize(funktionstable* funktable,variable_handling* variables_
             if(variable_name_bool){
                 //should break if we get the = sign since that is the part where the value starts
                 if(*(input_arr+index) == '=' || variable_index > 19 ){
-                    variable_name[19] = '\0'; // this is hardcoded since there should not be a other value needs to be changed if name is longer
+                    variable_name[variable_index] = '\0'; // this is hardcoded since there should not be a other value needs to be changed if name is longer
                     variable_name_bool = false;
                     variable_value_bool = true;
                     variable_index = 0;
@@ -151,7 +155,7 @@ bool tokenizer::tokenize(funktionstable* funktable,variable_handling* variables_
         //safty check
         if(*(input_arr+index) == '\0' || index == 119 ){
             running = false;
-            output[index] = '\0';
+            output[output_buffer_index] = '\0';
         }
         ++index;
         
