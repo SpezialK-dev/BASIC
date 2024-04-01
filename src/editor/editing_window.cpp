@@ -3,20 +3,23 @@
 #include "tokenizer.h"
 #include "../execution/executor.h"
 
-void editing_window::add_line(funktionstable* funkt_table, variable_handling* variables_table){
+bool editing_window::add_line(funktionstable* funkt_table, variable_handling* variables_table){
     int current_line;
     char c= 0;
     int index =0;
     unsigned char *input_arr = new unsigned char[256];
     //getting input from user 
     while(std::cin.get(c)){
-        if(c == '\n' || index >= 121){
-            break;
-        }
         input_arr[index] =static_cast<unsigned char>(c);
         ++index;
+        if(c == '\n' || index >= 122){
+            break;
+        }
     }
-    input_arr[index] = '\0';
+    if(index == 0){
+        return false;
+    }
+    input_arr[index-1] = '\0';
     //line number stuff
     current_line = get_line_number(input_arr);
     std::cout << current_line << ": " <<input_arr << std::endl;
@@ -38,11 +41,12 @@ void editing_window::add_line(funktionstable* funkt_table, variable_handling* va
         copy_to_line_buffer(outputarr, current_line);
         ++last_usedline; //TODO move to add to linebuffer
     }
+    return true;
 }
 void editing_window::open_editor(funktionstable* funkt_table, variable_handling* variables_table){
     //main programm loop 
     while(currently_running){
-        add_line(funkt_table, variables_table);
+        currently_running = add_line(funkt_table, variables_table);
     }
 }
 void editing_window::raise_error(int error_code){

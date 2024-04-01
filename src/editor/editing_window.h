@@ -17,7 +17,7 @@ private:
     };
     int last_usedline;
     bool currently_running;
-    void add_line(funktionstable *funkt_table,variable_handling* variables_table);
+    bool add_line(funktionstable *funkt_table,variable_handling* variables_table);
     int get_line_number(unsigned char* input_line);
     void copy_to_line_buffer(unsigned char* input, int position);
 
