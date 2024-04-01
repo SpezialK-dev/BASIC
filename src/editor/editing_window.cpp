@@ -40,6 +40,7 @@ bool editing_window::add_line(funktionstable* funkt_table, variable_handling* va
 
         //adding the tokenizer ouput to the final array
         copy_to_line_buffer(outputarr, current_line);
+        line_set[current_line] = true;
         ++last_usedline; //TODO move to add to linebuffer
     }
     return true;
@@ -82,6 +83,9 @@ void editing_window::copy_to_line_buffer(unsigned char* input, int position){
 }
 
 unsigned char* editing_window::get_linebuffer_line(int line_in_linebuffer){
+    if(!line_set[line_in_linebuffer]){
+        return nullptr;
+    }
     if(line_in_linebuffer >= 32767){
         raise_error(3);
         return linebuffer[0];

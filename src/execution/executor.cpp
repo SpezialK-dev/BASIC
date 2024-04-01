@@ -5,31 +5,32 @@
 void executor::execute(editing_window *window, funktionstable* funktable,variable_handling* variables_table){
     bool running =true;
     while(running){
-        for(int i = 0; i< 120; ++i){
+        unsigned char *current_line_buffer = window->get_linebuffer_line(current_line);
+        for(int i = 0;current_line_buffer != nullptr && i< 120; ++i){
             //code to loading the current line into the buffers
-            std::cout << "i " << i<< "'"<< window->get_linebuffer_line(current_line)[i]<<"'" << std::endl;
-            if(window->get_linebuffer_line(current_line)[i] == '\0'){
+            std::cout << "i " << i << std::endl;
+            if(current_line_buffer[i] == '\0'){
                 break;
             }
             //funktion check
             //empty space from 56 till 127 since that is the space not in use rn.
-            if(window->get_linebuffer_line(current_line)[i] >= 16 && window->get_linebuffer_line(current_line)[i] < 56 ){
+            if(current_line_buffer[i] >= 16 && current_line_buffer[i] < 56 ){
                 //getting the current funktion and putting it into the stack of saved funktions that we are currently using
-                current_funcs[func_index] = static_cast<funktionstable::funktion_sig>((*funktable).get_funk_var_pointer((window->get_linebuffer_line(current_line)[i] -16)));
-                current_funcs_names[func_index] = static_cast<funk_var*>((*funktable).getfunk_var( (window->get_linebuffer_line(current_line)[i] -16) ));
+                current_funcs[func_index] = static_cast<funktionstable::funktion_sig>((*funktable).get_funk_var_pointer((current_line_buffer[i] -16)));
+                current_funcs_names[func_index] = static_cast<funk_var*>((*funktable).getfunk_var( (current_line_buffer[i] -16) ));
                 ++func_index;
                 //TODO add limit for max of 40 funktions per line which should never be hit lol
             }
             //variable code 
             //255 should be the max number if I remeber correctly, will have to check again through
-            if(window->get_linebuffer_line(current_line)[i] >= 128 && window->get_linebuffer_line(current_line)[i] < 255 ){
-                current_variables[var_index] = (*variables_table).get_bvar(window->get_linebuffer_line(current_line)[i] -128);
+            if(current_line_buffer[i] >= 128 && current_line_buffer[i] < 255 ){
+                current_variables[var_index] = (*variables_table).get_bvar(current_line_buffer[i] -128);
                 var_index++;
             }
         }
         //EXECUTION CODE!!
         //code for getting through the funktion array
-        for(int i = 0; i< 120; ++i){ //TODO check if 120 is enought not sure yet
+        for(int i = 0; current_line_buffer != nullptr && i< 120; ++i){ //TODO check if 120 is enought not sure yet
             //if we have a funktion to run run it
             //std::cout << "i : "<< i << " funk_index : "<< func_index << std::endl;
             if(func_index != 0){
