@@ -2,15 +2,16 @@
 #include "editing_window.h"
 #include "tokenizer.h"
 #include "../execution/executor.h"
+#include <cstring>
 
 bool editing_window::add_line(funktionstable* funkt_table, variable_handling* variables_table){
     int current_line;
     char c= 0;
     int index =0;
-    unsigned char *input_arr = new unsigned char[256];
+    char *input_arr = new char[256];
     //getting input from user 
     while(std::cin.get(c)){
-        input_arr[index] =static_cast<unsigned char>(c);
+        input_arr[index] = c;
         ++index;
         if(c == '\n' || index >= 122){
             break;
@@ -53,23 +54,13 @@ void editing_window::raise_error(int error_code){
     std::cout << "ERROR : " << error_msgs[error_code] << std::endl;
 }
 //breaks when encuntering the a char
-int editing_window::get_line_number(unsigned char* input_line){
-    int i = 0;
-    int result = 0;
-    bool found_input = false;
+int editing_window::get_line_number(char* input_line){
+    unsigned long result = 0;
+    char *end = input_line;
     //code to check for line numbers 
-    while(i< 128){
-        if(std::isalpha(input_line[i])){
-            break;
-        }
-        if(std::isdigit(input_line[i])){
-            found_input = true;
-            result = result * 10 + (input_line[i]-'0');
-            input_line[i] = ' ';//todo make a more proper fix out of this
-        }
-        i++;
-    }
-    if(!found_input){
+    result = std::strtoul(input_line,&end,10);
+    std::memset(input_line, ' ', end-input_line);
+    if(input_line == end){
         // as a fallback if no line is specified
         result = last_usedline;
     }
@@ -79,7 +70,7 @@ int editing_window::get_line_number(unsigned char* input_line){
         result = 0;
         raise_error(3);
     }
-    return result;
+    return static_cast<int>(result);
 }
 void editing_window::copy_to_line_buffer(unsigned char* input, int position){
     for(int i = 0; i< 256; ++i){

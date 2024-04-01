@@ -31,7 +31,7 @@ int tokenizer::search_through_variables(variable_handling* variables_table,unsig
 
 
 
-bool tokenizer::tokenize(funktionstable* funktable,variable_handling* variables_table, unsigned char* input_arr,unsigned char* output, int current_linenumb){
+bool tokenizer::tokenize(funktionstable* funktable,variable_handling* variables_table, char* input_arr,unsigned char* output, int current_linenumb){
     int line_buffer_index{0}; // at what position we are in the line buffer 
     int variable_index{0};
     int output_buffer_index{0};
