@@ -1,7 +1,7 @@
 # TODO
 Hier kommen projekte weite verbesserungs ideen rein, welche die codebase aufräumen sollen und schneller machen sollen
 
-- [ ] eine lib für oft gebrauchte funktionen schreiben sodas es einfacher ist code zu optimisen später
+- [X] eine lib für oft gebrauchte funktionen schreiben sodas es einfacher ist code zu optimisen später
 - [X] fix the problem that causes funk_var causes when being imported into another class
 - [X] create a default constructor for funkt_var
 - [X] rework all funktions to have a similar type, of getting 2 bvars as input and return a void pointer. because otherwiese we have a problem

@@ -8,7 +8,6 @@ void executor::execute(editing_window *window, funktionstable* funktable,variabl
         unsigned char *current_line_buffer = window->get_linebuffer_line(current_line);
         for(int i = 0;current_line_buffer != nullptr && i< 120; ++i){
             //code to loading the current line into the buffers
-            std::cout << "i " << i << std::endl;
             if(current_line_buffer[i] == '\0'){
                 break;
             }

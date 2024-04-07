@@ -53,6 +53,10 @@ funktionstable::funktionstable(){
     unsigned char printname[6]{"PRINT"};
     all_funktions[5] = (funk_var{static_cast<unsigned char>(0),print_sig, printname});
     func[5] = &funktions_dic::PRINT;
+    unsigned char plus_sig[3]{1,1,'\0'};
+    unsigned char plusname[5]{"PLUS"};
+    all_funktions[6] = (funk_var{static_cast<unsigned char>(0),plus_sig, plusname});
+    func[6] = &funktions_dic::PLUS;
     
 
 

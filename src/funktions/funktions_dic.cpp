@@ -32,10 +32,13 @@ b_var* funktions_dic::PLUS(int number_param,b_var* args[]){
     unsigned char type = (*args[0]).get_type();
     if(type == 1){
         int return_value = *(static_cast<int*>((*args[0]).get_pointer())) + *(static_cast<int*>((*args[1]).get_pointer()));
+        *(static_cast<int*>(args[0]->get_pointer())) = return_value; // allocating the value to the First one we have
 
     }else if(type == 2){
         float return_value = *(static_cast<float*>((*args[0]).get_pointer())) + *(static_cast<float*>((*args[1]).get_pointer()));
+        *(static_cast<float*>(args[0]->get_pointer())) = return_value; // allocating the value to the First one we have
     }
+    return new b_var;
 }
 
 b_var* funktions_dic::MINUS(int number_param,b_var* args[]){
