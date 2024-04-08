@@ -35,7 +35,7 @@ inline editing_window::editing_window()
 {   
     linebuffer = new unsigned char* [32767];
     for(int i = 0; i < 32767; i++){
-        linebuffer[i] = new unsigned char[120];  
+        //linebuffer[i] = new unsigned char[120];  
         line_set[i] = false;
     }
     currently_running=true;
