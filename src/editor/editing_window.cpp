@@ -24,8 +24,9 @@ bool editing_window::add_line(funktionstable* funkt_table, variable_handling* va
     //line number stuff
     current_line = get_line_number(input_arr);
     //allocate the memmory 
-    linebuffer[current_line] = new unsigned char[120];
-
+    if(!line_set[current_line]){
+        linebuffer[current_line] = new unsigned char[120];
+    }
     std::cout << current_line << ": " <<input_arr << std::endl;
     
     //tokenizer stuff
