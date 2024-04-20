@@ -12,5 +12,7 @@ int main(){
   editing_window e{};
   std::cout << "BASIC INTERPRETER 0.1.0\n"<< std::endl;
   e.open_editor(funktions, variables);
-}
+  delete variables;
+  delete funktions;
+  }
 

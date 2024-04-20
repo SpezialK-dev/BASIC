@@ -1,6 +1,9 @@
 #include "executor.h"
 #include "../lib/string_lib.h"
 
+executor::~executor() {
+  delete[] current_variables;
+}
 
 void executor::execute(editing_window *window, funktionstable* funktable,variable_handling* variables_table){
     bool running =true;
