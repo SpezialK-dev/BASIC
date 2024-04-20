@@ -8,15 +8,22 @@ private:
     void* pointer; 
     unsigned char name[20]{""};
 public:
-    inline b_var(unsigned char in_name[], unsigned char *in_type, void* in_pointer );
+
+  inline b_var(unsigned char in_name[], unsigned char *in_type, void* in_pointer );
     inline b_var();
-    void* get_pointer();
-    unsigned char get_type();
+
+    b_var(const b_var&);
+
+  // DESTRUCTOR
+  ~b_var();
+  //GET METHODES
+  void* get_pointer()const;
+    unsigned char get_type()const;
     unsigned char* get_name();
 };
 
 //constructor
-b_var::b_var(unsigned char in_name[], unsigned char *in_type, void* in_pointer )
+b_var::b_var(unsigned char in_name[], unsigned char *in_type, void* in_pointer ) : type{in_type} , pointer{in_pointer} 
 {
     for(int i = 0; i< 19; ++i){
       name[i] = in_name[i];
@@ -27,12 +34,11 @@ b_var::b_var(unsigned char in_name[], unsigned char *in_type, void* in_pointer )
     // 1 = int
     // 2 = Float
     // 3 = String
-    type = in_type;
-    pointer = in_pointer;
+    // for intype
+    
 }
 b_var::b_var(){
-    type = new unsigned char;
-    *type = 0;
+  type = new unsigned char{0};
     unsigned char no_name[20]{"NOTDEFINED"};
     for(int i = 0; i< 19; ++i){
       name[i] = no_name[i];

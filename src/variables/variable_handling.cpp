@@ -1,6 +1,17 @@
 #include "ctype.h"
+#include <iostream>
+#include <ostream>
 #include "variable_handling.h"
-//#include <iostream>
+
+variable_handling::~variable_handling() {
+  // currently cauese problems
+  //delete [] variables;
+}
+
+
+variable_handling::variable_handling(){
+
+}
 
 long unsigned int pow_10(int exponent){
     long unsigned int x = 1;
@@ -106,8 +117,8 @@ void variable_handling::create_new_variable(unsigned char  *name, unsigned char 
       for(int counter = float_descion_point; counter < 120; ++counter){
         //break condition if the array is smaller sized
         if((value[counter]-'0') == '\0' || (value[counter]-'0') == ' ' || (value[counter]-'0') == -48){
-          //std::cout << (value[counter]-'0') <<std::endl;
-          break;
+          //std::cout << (value[counter]-'0') <<std::
+	  break;
         }
         //std::cout << counter <<" : " << "(value[counter]-'0') : " << (value[counter]-'0') << std::endl; 
         decimal_part_float = decimal_part_float * 10 + (value[counter]-'0');
@@ -115,7 +126,7 @@ void variable_handling::create_new_variable(unsigned char  *name, unsigned char 
       }
       //actual creation and conversion part
       float result = float(int_part) + (float(decimal_part_float)/float(pow_10(float_counter)));
-      variables[working_index] = new b_var(name, new unsigned char(1), new float{result});
+      variables[working_index] = new b_var(name, new unsigned char(2), new float{result});
       //std::cout << "name: " << name<<" value: "<< result <<std::endl;
     }
     //default response should be just int, so as a fallback it should just ignore everything that comes after the . 
@@ -161,9 +172,6 @@ unsigned char variable_handling::find_space_in_variable(unsigned char *name){
     return last_elem;
 }
 
-b_var* variable_handling::get_bvar(int index){
-    return variables[index];
-}
 unsigned char variable_handling::get_last_elem(){
   return last_elem;
 }
