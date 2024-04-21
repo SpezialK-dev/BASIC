@@ -34,6 +34,7 @@ b_var::b_var(unsigned char in_name[], unsigned char *in_type, void* in_pointer )
     // 1 = int
     // 2 = Float
     // 3 = String
+    // 4 = Exit Type 
     // for intype
     
 }

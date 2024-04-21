@@ -172,6 +172,4 @@ unsigned char variable_handling::find_space_in_variable(unsigned char *name){
     return last_elem;
 }
 
-unsigned char variable_handling::get_last_elem(){
-  return last_elem;
-}
+

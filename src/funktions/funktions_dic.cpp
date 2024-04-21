@@ -2,7 +2,10 @@
 // other stuff
 
 b_var* funktions_dic::EXIT(int number_param,b_var* args[]){
-    // make another way for this
+  //just create a special b_var that returns 
+  // make another way for this
+  b_var* exit_bvar = new b_var();
+  return exit_bvar;
 }
 
 b_var* funktions_dic::RUN(int number_param,b_var* args[]){

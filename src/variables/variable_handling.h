@@ -22,7 +22,10 @@ public:
   b_var* get_bvar(int index){
     return variables[index];
   }
-    unsigned char get_last_elem();
+    unsigned char get_last_elem(){
+      return last_elem;
+    }
+
 };
 
 #endif 
