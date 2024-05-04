@@ -1,4 +1,5 @@
-#include "funktions_dic.h"
+#include "../../include/funktions_dic.h"
+#include <iostream>
 // other stuff
 
 b_var* funktions_dic::EXIT(int number_param,b_var* args[]){

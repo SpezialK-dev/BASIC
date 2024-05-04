@@ -1,4 +1,4 @@
-#include "funk_var.h"
+#include "../../include/funk_var.h"
 
 unsigned char funk_var::get_return_type(){
     return return_type;

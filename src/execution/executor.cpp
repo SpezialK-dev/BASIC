@@ -1,5 +1,5 @@
-#include "executor.h"
-#include "../lib/string_lib.h"
+#include "../../include/executor.h"
+#include "../../include/string_lib.h"
 
 executor::~executor() {
   delete[] current_variables;

@@ -1,4 +1,4 @@
-#include "funktionstable.h"
+#include "../../include/funktionstable.h"
 
 funk_var* funktionstable::getfunk_var(int index){
     if(index >= 40){

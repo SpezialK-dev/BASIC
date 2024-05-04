@@ -1,5 +1,5 @@
 #include <iostream>
-#include "b_var.h"
+#include "../../include/b_var.h"
 
 b_var::~b_var() {
   delete type;

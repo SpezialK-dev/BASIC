@@ -1,7 +1,7 @@
 #include "ctype.h"
 #include <iostream>
 #include <ostream>
-#include "variable_handling.h"
+#include "../../include/variable_handling.h"
 
 variable_handling::~variable_handling() {
   // currently cauese problems

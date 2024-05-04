@@ -1,7 +1,7 @@
 #include <iostream>
-#include "editing_window.h"
-#include "tokenizer.h"
-#include "../execution/executor.h"
+#include "../../include/editing_window.h"
+#include "../../include/tokenizer.h"
+#include "../../include/executor.h"
 #include <cstring>
 
 bool editing_window::add_line(funktionstable* funkt_table, variable_handling* variables_table){

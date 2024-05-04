@@ -7,3 +7,5 @@ build/
 .vscode/*
 vgcore.*
 BASIC_realse
+BASIC_release
+mem_safes.txt

@@ -1,4 +1,4 @@
-#include "string_lib.h"
+#include "../../include/string_lib.h"
 #include <iostream>
 
 

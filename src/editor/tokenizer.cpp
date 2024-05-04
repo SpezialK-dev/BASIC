@@ -1,6 +1,6 @@
-#include "tokenizer.h"
-#include "../lib/string_lib.h"
-
+#include "../../include/tokenizer.h"
+#include "../../include/string_lib.h"
+#include <cctype>
 
 tokenizer::tokenizer(unsigned char* whole_input)
 {
@@ -57,7 +57,7 @@ bool tokenizer::tokenize(funktionstable* funktable,variable_handling* variables_
     unsigned char *variable_name = new unsigned char[20];
     unsigned char *variabl_value = new unsigned char[30];
     while(running){
-        if(isalnum(*(input_arr+index))){
+      if(isalnum(*(input_arr+index))){
             starting_index = index;
             has_started_bool=true;
         }
