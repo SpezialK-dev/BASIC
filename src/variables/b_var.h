@@ -4,6 +4,7 @@
 class b_var
 {
 private:
+  enum Typess{undefined, integer,floating_p,string,exit};//should be used to replace the int values for types
     unsigned char* type;
     void* pointer; 
     unsigned char name[20]{""};
