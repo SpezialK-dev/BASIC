@@ -17,11 +17,11 @@ b_var* funktions_dic::RUN(int number_param,b_var* args[]){
 //maybe replace with one function
 b_var* funktions_dic::PRINT(int number_param,b_var* args[]){
     unsigned char type = (*args[0]).get_type();
-    if(type == 1){
+    if(type == b_var::integer){
         std::cout << *(static_cast<int*>((*args[0]).get_pointer())) <<std::endl;
-    }else if(type == 2){
+    }else if(type == b_var::floating_p){
         std::cout << *(static_cast<float*>((*args[0]).get_pointer())) <<std::endl;
-    }else if(type == 3){
+    }else if(type == b_var::string){
         // not sure might neeed not need to dereference this its supposed to print out everything
         std::cout << *(static_cast<char*>((*args[0]).get_pointer())) <<std::endl;
     }
@@ -34,11 +34,11 @@ b_var* funktions_dic::PLUS(int number_param,b_var* args[]){
         return new b_var;
     }
     unsigned char type = (*args[0]).get_type();
-    if(type == 1){
+    if(type == b_var::integer){
         int return_value = *(static_cast<int*>((*args[0]).get_pointer())) + *(static_cast<int*>((*args[1]).get_pointer()));
         *(static_cast<int*>(args[1]->get_pointer())) = return_value; // allocating the value to the First one we have
 
-    }else if(type == 2){
+    }else if(type == b_var::floating_p){
         float return_value = *(static_cast<float*>((*args[0]).get_pointer())) + *(static_cast<float*>((*args[1]).get_pointer()));
         *(static_cast<float*>(args[0]->get_pointer())) = return_value; // allocating the value to the First one we have
     }
@@ -52,10 +52,10 @@ b_var* funktions_dic::MINUS(int number_param,b_var* args[]){
 ;
     }
     unsigned char type = (*args[0]).get_type();
-    if(type == 1){
+    if(type == b_var::integer){
         int return_value = *(static_cast<int*>((*args[0]).get_pointer())) - *(static_cast<int*>((*args[1]).get_pointer()));
 
-    }else if(type == 2){
+    }else if(type == b_var::floating_p){
         float return_value = *(static_cast<float*>((*args[0]).get_pointer())) - *(static_cast<float*>((*args[1]).get_pointer()));
     }
 }
@@ -65,10 +65,10 @@ b_var* funktions_dic::DIVISION(int number_param,b_var* args[]){
         return new b_var;
     }
     unsigned char type = (*args[0]).get_type();
-    if(type == 1){
+    if(type == b_var::integer){
         int return_value = *(static_cast<int*>((*args[0]).get_pointer())) / *(static_cast<int*>((*args[1]).get_pointer()));
 
-    }else if(type == 2){
+    }else if(type == b_var::integer){
         float return_value = *(static_cast<float*>((*args[0]).get_pointer())) / *(static_cast<float*>((*args[1]).get_pointer()));
     }
 }
@@ -79,10 +79,10 @@ b_var* funktions_dic::MULTIPLICATION(int number_param,b_var* args[]){
         return new b_var;
     }
     unsigned char type = (*args[0]).get_type();
-    if(type == 1){
+    if(type == b_var::integer){
         int return_value = *(static_cast<int*>((*args[0]).get_pointer())) * *(static_cast<int*>((*args[1]).get_pointer()));
 
-    }else if(type == 2){
+    }else if(type == b_var::integer){
         float return_value = *(static_cast<float*>((*args[0]).get_pointer())) * *(static_cast<float*>((*args[1]).get_pointer()));
     }
 }
