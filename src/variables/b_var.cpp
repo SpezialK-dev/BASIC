@@ -2,7 +2,6 @@
 #include "../../include/b_var.h"
 
 b_var::~b_var() {
-  delete type;
   delete pointer;
   std::cout << "deleted variable" << name << std::endl;
   
@@ -11,9 +10,9 @@ b_var::~b_var() {
 void* b_var::get_pointer()const {
     return pointer;
 }
-unsigned char b_var::get_type()const {
-    return *type;
+b_var::Types b_var::get_type()const {
+    return type;
 }
-unsigned char* b_var::get_name() const{
+unsigned char* b_var::get_name(){
     return name;
 }

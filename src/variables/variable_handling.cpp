@@ -126,13 +126,13 @@ void variable_handling::create_new_variable(unsigned char  *name, unsigned char 
       }
       //actual creation and conversion part
       float result = float(int_part) + (float(decimal_part_float)/float(pow_10(float_counter)));
-      variables[working_index] = new b_var(name, new unsigned char(2), new float{result});
+      variables[working_index] = new b_var(name,b_var::floating_p , new float{result});
       //std::cout << "name: " << name<<" value: "<< result <<std::endl;
     }
     //default response should be just int, so as a fallback it should just ignore everything that comes after the . 
     else{
 
-     variables[working_index] = new b_var(name, new unsigned char(1), new int(int_part));
+      variables[working_index] = new b_var(name, b_var::integer, new int(int_part));
     }
     //TODO String part
   }
