@@ -10,6 +10,7 @@ private:
     unsigned char name[20]{""};
 public:
 
+  //constructor
   inline b_var(unsigned char in_name[], unsigned char *in_type, void* in_pointer );
     inline b_var();
 
@@ -20,7 +21,7 @@ public:
   //GET METHODES
   void* get_pointer()const;
     unsigned char get_type()const;
-    unsigned char* get_name();
+    unsigned char* get_name() const;
 };
 
 //constructor

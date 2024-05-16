@@ -14,6 +14,6 @@ void* b_var::get_pointer()const {
 unsigned char b_var::get_type()const {
     return *type;
 }
-unsigned char* b_var::get_name(){
+unsigned char* b_var::get_name() const{
     return name;
 }

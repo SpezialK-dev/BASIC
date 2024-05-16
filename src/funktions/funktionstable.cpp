@@ -12,3 +12,7 @@ funktionstable::funktion_sig funktionstable::get_funk_var_pointer(int i){
     return func[i];
 }
 
+//todo
+funktionstable::~funktionstable() {}
+
+// 
