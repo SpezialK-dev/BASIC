@@ -21,4 +21,6 @@ Hier kommen projekte weite verbesserungs ideen rein, welche die codebase aufräu
 - [ ] make funktions always return a variable, to prevent crashes on certain cpus. [Source](https://stackoverflow.com/questions/47899971/c-getting-error-illegal-instruction-core-dumped-upon-bitwise-or-operatio)
 - [X] seperate the h files into their own folder and fix imports that problem that will happen because of that 
 - [ ] create a copy construcor / follow the rule of 5
-- [ ] 
+- [ ]  convert all Types to enum types 
+  - [ ] fix executor to use new type system
+

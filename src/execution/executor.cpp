@@ -1,5 +1,6 @@
 #include "../../include/executor.h"
 #include "../../include/string_lib.h"
+#include <iterator>
 
 executor::~executor() {
   delete[] current_variables;
@@ -29,6 +30,7 @@ void executor::execute(editing_window *window, funktionstable* funktable,variabl
                 current_variables[var_index] = (*variables_table).get_bvar(current_line_buffer[i] -128);
                 var_index++;
             }
+	    
         }
         //EXECUTION CODE!!
         //code for getting through the funktion array
@@ -36,7 +38,17 @@ void executor::execute(editing_window *window, funktionstable* funktable,variabl
             //if we have a funktion to run run it
             //std::cout << "i : "<< i << " funk_index : "<< func_index << std::endl;
             if(func_index != 0){
-                int param_count = string_lib::uns_strlen((*current_funcs_names[i]).get_type_signature());
+	      
+	      //reimplemented a way to get the ammount of variables needed
+	      int param_count = 0;
+	      b_var::Types* current_types = current_funcs_names[i]->get_type_signature();
+	      for(int i = 0; i< 10; ++i ){
+		if(*(current_types+i) == b_var::end){
+		  break;
+		}
+		++param_count;
+	      }
+	      
                 b_var* *variables_to_give_to_func = new b_var* [10];
                 //putting the variables into the current funktion and then exeucint that value
                 for(int param_loop = 0; param_loop< param_count; param_loop++){

@@ -4,7 +4,7 @@
 class b_var
 {
 public:
- enum Types{undefined, integer,floating_p,string,exit};//should be used to replace the int values for types
+  enum Types{end,undefined, integer,floating_p,string,exit,anytype,};//should be used to replace the int values for types
   //constructor
   inline b_var(unsigned char in_name[],Types  in_type, void* in_pointer );
     inline b_var();

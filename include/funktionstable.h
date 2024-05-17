@@ -1,6 +1,7 @@
 #ifndef funktionstable_h
 #define funktionstable_h
 
+#include "b_var.h"
 #include "funk_var.h"
 #include "funktions_dic.h"
 
@@ -30,33 +31,39 @@ private:
 
 funktionstable::funktionstable(){
     all_funktions = new funk_var[40];
-    unsigned char exit_sig[2]{0,'\0'}; 
+    b_var::Types exit_sig[2]{b_var::undefined,b_var::end}; 
     unsigned char exit_name[5]{"EXIT"};
-    all_funktions[0] = (funk_var{static_cast<unsigned char>(0),exit_sig, exit_name});
+    all_funktions[0] = (funk_var{b_var::undefined,exit_sig, exit_name});
     func[0] = &funktions_dic::EXIT;
-    unsigned char let_sig[2]{0,'\0'};//this might need fixing and puting stuff into some other code
+
+    b_var::Types let_sig[2]{b_var::undefined, b_var::end};//this might need fixing and puting stuff into some other code
     unsigned char let_name[4]{"LET"};
-    all_funktions[1] = (funk_var{static_cast<unsigned char>(0),let_sig,let_name });//need to fix the type at some later time
+    all_funktions[1] = (funk_var{b_var::undefined,let_sig,let_name });//need to fix the type at some later time
     func[1] = &funktions_dic::LET;
-    unsigned char run_sig[2]{0,'\0'};
+
+    b_var::Types run_sig[2]{b_var::undefined,b_var::end};
     unsigned char run_name[4]{"RUN"};
-    all_funktions[2] = (funk_var{static_cast<unsigned char>(2),run_sig, run_name});
+    all_funktions[2] = (funk_var{b_var::integer,run_sig, run_name});
     func[2] = &funktions_dic::RUN;
-    unsigned char int_to_float_sig[2]{1,'\0'};
+
+    b_var::Types int_to_float_sig[2]{b_var::integer,b_var::end};
     unsigned char int_to_float_name[13]{"INT_TO_FLOAT"};
-    all_funktions[3] = (funk_var{static_cast<unsigned char>(2),int_to_float_sig, int_to_float_name});
+    all_funktions[3] = (funk_var{b_var::floating_p,int_to_float_sig, int_to_float_name});
     func[3] = &funktions_dic::INT_TO_FLOAT;
-    unsigned char float_to_int_sig[2]{2,'\0'};
+
+    b_var::Types float_to_int_sig[2]{b_var::floating_p, b_var::end};
     unsigned char float_to_int_name[13]{"FLOAT_TO_INT"};
-    all_funktions[4] = (funk_var{static_cast<unsigned char>(1),float_to_int_sig, float_to_int_name});
+    all_funktions[4] = (funk_var{b_var::integer,float_to_int_sig, float_to_int_name});
     func[4] = &funktions_dic::FLOAT_TO_INT;
-    unsigned char print_sig[2]{4,'\0'};
+
+    b_var::Types print_sig[2]{b_var::anytype,b_var::end};
     unsigned char printname[6]{"PRINT"};
-    all_funktions[5] = (funk_var{static_cast<unsigned char>(0),print_sig, printname});
+    all_funktions[5] = (funk_var{b_var::undefined,print_sig, printname});
     func[5] = &funktions_dic::PRINT;
-    unsigned char plus_sig[3]{1,1,'\0'};
+    
+    b_var::Types plus_sig[3]{b_var::integer, b_var::integer,b_var::end};
     unsigned char plusname[5]{"PLUS"};
-    all_funktions[6] = (funk_var{static_cast<unsigned char>(0),plus_sig, plusname});
+    all_funktions[6] = (funk_var{b_var::undefined,plus_sig, plusname});
     func[6] = &funktions_dic::PLUS;
     
 

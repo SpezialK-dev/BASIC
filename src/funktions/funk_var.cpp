@@ -1,10 +1,10 @@
 #include "../../include/funk_var.h"
 
-unsigned char funk_var::get_return_type(){
+b_var::Types funk_var::get_return_type(){
     return return_type;
 }
 
-unsigned char* funk_var::get_type_signature(){
+b_var::Types* funk_var::get_type_signature(){
     return type_signature;
 }
 unsigned char* funk_var::get_name(){
