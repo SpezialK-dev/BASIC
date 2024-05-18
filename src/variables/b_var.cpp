@@ -1,9 +1,9 @@
-#include <iostream>
+
 #include "../../include/b_var.h"
 
 b_var::~b_var() {
   delete pointer;
-  std::cout << "deleted variable" << name << std::endl;
+
   
 }
 

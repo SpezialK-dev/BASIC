@@ -1,5 +1,6 @@
 #include "../../include/funktionstable.h"
 
+
 funk_var* funktionstable::getfunk_var(int index){
     if(index >= 40){
         return &all_funktions[0];
@@ -13,6 +14,10 @@ funktionstable::funktion_sig funktionstable::get_funk_var_pointer(int i){
 }
 
 //todo
-funktionstable::~funktionstable() {}
+funktionstable::~funktionstable() {
+  //creates problesm currently 
+  delete [] all_funktions;
+  
+}
 
-// 
+ 

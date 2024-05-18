@@ -1,11 +1,11 @@
 #include "ctype.h"
 #include <iostream>
-#include <ostream>
 #include "../../include/variable_handling.h"
 
 variable_handling::~variable_handling() {
   // currently cauese problems
-  //delete [] variables;
+  //std::cout << "freed variable handling" << std::endl;
+   delete [] variables;
 }
 
 

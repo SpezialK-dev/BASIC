@@ -9,9 +9,8 @@ tokenizer::tokenizer(unsigned char* whole_input)
 
 
 int tokenizer::search_through_funktions(funktionstable* funk_table,unsigned char* input_arr){
-    funktionstable table = *(funk_table);
     for(int i = 0; i< 40; ++i){
-        funk_var* funk = (table.getfunk_var(i));
+      funk_var* funk = (funk_table->getfunk_var(i));
         bool result= string_lib::isequal((*funk).get_name(), input_arr);
         if(result){
             return i+16; // is the value of starting index of where the main stuff is stored
@@ -21,14 +20,14 @@ int tokenizer::search_through_funktions(funktionstable* funk_table,unsigned char
 }
 
 int tokenizer::search_through_variables(variable_handling* variables_table,unsigned char* input_arr){
-    variable_handling variable_handling_inst = *(variables_table);
+  
     //checking if the array is empty to check cause otherwies we will segfault
     if((*variables_table).get_last_elem() == 255){
         return 999;
     }
     int max_vars = (*variables_table).get_last_elem();
     for(int i=0; i<max_vars; ++i ){
-        b_var* current_variable = variable_handling_inst.get_bvar(i);
+        b_var* current_variable = variables_table->get_bvar(i);
         if(string_lib::isequal(current_variable->get_name(),input_arr)){
             return i+128;
         }
