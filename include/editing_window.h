@@ -27,6 +27,7 @@ public:
     unsigned char* get_linebuffer_line(int line_in_linebuffer);
     void raise_error(int error_code);
     editing_window();
+  ~editing_window();
     void end_editing_window();
     
 };

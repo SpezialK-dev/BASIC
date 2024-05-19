@@ -4,6 +4,12 @@
 #include "../../include/executor.h"
 #include <cstring>
 
+// Destructor
+editing_window::~editing_window() {
+
+  delete [] linebuffer;
+}
+
 bool editing_window::add_line(funktionstable* funkt_table, variable_handling* variables_table){
     int current_line;
     char c= 0;
