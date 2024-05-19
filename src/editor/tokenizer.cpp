@@ -166,6 +166,9 @@ bool tokenizer::tokenize(funktionstable* funktable,variable_handling* variables_
         ++index;
         
     }
+    delete [] saved_array;
+    delete [] variable_name;
+    delete [] variabl_value;
     return false;
     
 }

@@ -58,7 +58,7 @@ void executor::execute(editing_window *window, funktionstable* funktable,variabl
                 }
 		//exeuction
                b_var* funk_return  = current_funcs[i](param_count,variables_to_give_to_func );
-	       
+	       delete [] variables_to_give_to_func;
                 // clean up code 
 	       delete funk_return; //temp fix will later be be better implemented 
 	       current_funcs[func_index] = nullptr;
