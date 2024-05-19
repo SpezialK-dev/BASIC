@@ -56,10 +56,12 @@ void executor::execute(editing_window *window, funktionstable* funktable,variabl
                     int value_to_access = var_index - (param_loop+1); //we want to get to top value of the stack and then put that into our funktion
                     variables_to_give_to_func[param_loop] = current_variables[value_to_access];//copying the value into 
                 }
-                *current_funcs[i](param_count,variables_to_give_to_func );
-
+		//exeuction
+               b_var* funk_return  = current_funcs[i](param_count,variables_to_give_to_func );
+	       
                 // clean up code 
-                current_funcs[func_index] = nullptr;
+	       delete funk_return; //temp fix will later be be better implemented 
+	       current_funcs[func_index] = nullptr;
                 current_funcs_names[func_index] = nullptr;
                 --func_index;
 

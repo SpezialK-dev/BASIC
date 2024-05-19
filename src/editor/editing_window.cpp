@@ -14,7 +14,7 @@ bool editing_window::add_line(funktionstable* funkt_table, variable_handling* va
     int current_line;
     char c= 0;
     int index =0;
-    char *input_arr = new char[256];
+    char input_arr[256]{};
     //getting input from user 
     while(std::cin.get(c)){
         input_arr[index] = c;
@@ -53,6 +53,7 @@ bool editing_window::add_line(funktionstable* funkt_table, variable_handling* va
         line_set[current_line] = true;
         ++last_usedline; //TODO move to add to linebuffer
     }
+    delete [] outputarr;
     return true;
 }
 void editing_window::open_editor(funktionstable* funkt_table, variable_handling* variables_table){

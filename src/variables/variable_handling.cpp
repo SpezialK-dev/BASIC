@@ -131,7 +131,7 @@ void variable_handling::create_new_variable(unsigned char  *name, unsigned char 
     }
     //default response should be just int, so as a fallback it should just ignore everything that comes after the . 
     else{
-
+      
       variables[working_index] = new b_var(name, b_var::integer, new int(int_part));
     }
     //TODO String part

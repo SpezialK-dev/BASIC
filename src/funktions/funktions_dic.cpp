@@ -25,7 +25,7 @@ b_var* funktions_dic::PRINT(int number_param,b_var* args[]){
         // not sure might neeed not need to dereference this its supposed to print out everything
         std::cout << *(static_cast<char*>((*args[0]).get_pointer())) <<std::endl;
     }
-    return new b_var; // needed to not crash on certain CPU's since return value is needed 
+    return new b_var{nullptr}; // needed to not crash on certain CPU's since return value is needed 
 }
 
 b_var* funktions_dic::PLUS(int number_param,b_var* args[]){
@@ -42,13 +42,13 @@ b_var* funktions_dic::PLUS(int number_param,b_var* args[]){
         float return_value = *(static_cast<float*>((*args[0]).get_pointer())) + *(static_cast<float*>((*args[1]).get_pointer()));
         *(static_cast<float*>(args[0]->get_pointer())) = return_value; // allocating the value to the First one we have
     }
-    return new b_var;
+    return new b_var{nullptr};
 }
 
 b_var* funktions_dic::MINUS(int number_param,b_var* args[]){
     //simple precaution though should not be triggered
     if((*args[0]).get_type() != (*args[1]).get_type()){
-        return new b_var;
+      return new b_var{nullptr};
 ;
     }
     unsigned char type = (*args[0]).get_type();
@@ -62,7 +62,7 @@ b_var* funktions_dic::MINUS(int number_param,b_var* args[]){
 b_var* funktions_dic::DIVISION(int number_param,b_var* args[]){
     //simple precaution though should not be triggered
     if((*args[0]).get_type() != (*args[1]).get_type()){
-        return new b_var;
+      return new b_var{nullptr};
     }
     unsigned char type = (*args[0]).get_type();
     if(type == b_var::integer){
@@ -76,7 +76,7 @@ b_var* funktions_dic::DIVISION(int number_param,b_var* args[]){
 b_var* funktions_dic::MULTIPLICATION(int number_param,b_var* args[]){
     //simple precaution though should not be triggered
     if((*args[0]).get_type() != (*args[1]).get_type()){
-        return new b_var;
+      return new b_var{nullptr};
     }
     unsigned char type = (*args[0]).get_type();
     if(type == b_var::integer){
@@ -85,6 +85,7 @@ b_var* funktions_dic::MULTIPLICATION(int number_param,b_var* args[]){
     }else if(type == b_var::integer){
         float return_value = *(static_cast<float*>((*args[0]).get_pointer())) * *(static_cast<float*>((*args[1]).get_pointer()));
     }
+    return new b_var{nullptr};
 }
 
 b_var* funktions_dic::INT_TO_FLOAT(int number_param,b_var* args[]){
