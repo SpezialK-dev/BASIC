@@ -6,6 +6,9 @@
 //can get a max of 255 bytes of input so 255 char array?
 //for now I will use this since, this is the amount of Chars that where possible in atari basic
 
+// all the constants of the program
+//static const int MaxLineNumb = 32767;
+
 int main(){
   variable_handling *variables = new variable_handling{};
   funktionstable *funktions = new funktionstable{};

@@ -6,9 +6,15 @@
 
 // Destructor
 editing_window::~editing_window() {
-
+  //clearing up all of the used lines 
+  for(int i = 0; i<= 32767; ++i){
+      if(line_set[i]){
+        delete [] linebuffer[i];
+      }
+    }
   delete [] linebuffer;
-}
+  
+  }
 
 bool editing_window::add_line(funktionstable* funkt_table, variable_handling* variables_table){
     int current_line;
