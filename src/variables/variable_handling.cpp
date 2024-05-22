@@ -5,12 +5,20 @@
 variable_handling::~variable_handling() {
   // currently cauese problems
   //std::cout << "freed variable handling" << std::endl;
-   delete [] variables;
+  for(int i = 0; i< 128; ++i ){
+    if(var_pop[i]){
+      delete *(variables+i);
+    }
+  }
+  delete [] variables;
 }
 
 
 variable_handling::variable_handling(){
-
+  //needed since we now want to know that all of the vars are unallocated
+  for(int i =0; i<= 128; ++i){
+    var_pop[i] = false;//should default to false
+  } 
 }
 
 long unsigned int pow_10(int exponent){
@@ -127,12 +135,13 @@ void variable_handling::create_new_variable(unsigned char  *name, unsigned char 
       //actual creation and conversion part
       float result = float(int_part) + (float(decimal_part_float)/float(pow_10(float_counter)));
       variables[working_index] = new b_var(name,b_var::floating_p , new float{result});
+      var_pop[working_index] = true;
       //std::cout << "name: " << name<<" value: "<< result <<std::endl;
     }
     //default response should be just int, so as a fallback it should just ignore everything that comes after the . 
     else{
-      
       variables[working_index] = new b_var(name, b_var::integer, new int(int_part));
+      var_pop[working_index] = true;
     }
     //TODO String part
   }

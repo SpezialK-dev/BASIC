@@ -9,7 +9,8 @@ class variable_handling
 private:
     
     b_var* *variables  = new b_var*[128];
-    unsigned char last_elem{255}; 
+  bool var_pop[128];//default false
+  unsigned char last_elem{255}; 
     unsigned char find_space_in_variable(unsigned char *name);
 public:
    variable_handling();

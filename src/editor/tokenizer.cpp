@@ -45,12 +45,12 @@ bool tokenizer::tokenize(funktionstable* funktable,variable_handling* variables_
     int starting_index{0};
     int ending_word_index{0};
     int saved_array_index{0};
-    bool has_started_bool=false;
-    bool variable_found_bool =false;
-    bool variable_name_bool = true;
-    bool variable_value_bool = false;
-    bool variable_finished = false;
-    bool variabel_value_started_bool = false; //needed to skip the first ' ' if needed
+    bool has_started_bool{false};
+    bool variable_found_bool{false};
+    bool variable_name_bool{true};
+    bool variable_value_bool{false};
+    bool variable_finished{false};
+    bool variabel_value_started_bool{false}; //needed to skip the first ' ' if needed
     bool running = true;
     unsigned char *saved_array = new unsigned char[128];
     unsigned char *variable_name = new unsigned char[20];
@@ -77,7 +77,10 @@ bool tokenizer::tokenize(funktionstable* funktable,variable_handling* variables_
                     //TODO add code to create funktions
                     variable_found_bool = true;
                     has_started_bool = false;
-                    return true;
+		    delete [] saved_array;
+		    delete [] variable_name;
+		    delete [] variabl_value;
+		    return true;
                 }
                 
                 if(value_to_safe != 999 && value_to_safe != 17 && value_to_safe != 18){//exclude 17 because its the let funktion
