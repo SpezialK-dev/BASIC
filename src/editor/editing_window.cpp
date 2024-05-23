@@ -40,6 +40,7 @@ bool editing_window::add_line(funktionstable* funkt_table, variable_handling* va
     //allocate the memmory 
     if(!line_set[current_line]){
         linebuffer[current_line] = new unsigned char[120];
+	line_set[current_line] = true;
     }
     std::cout << current_line << ": " <<input_arr << std::endl;
     
