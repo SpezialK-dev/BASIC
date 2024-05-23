@@ -4,10 +4,12 @@
 #include "../../include/executor.h"
 #include <cstring>
 
+extern const int MAX_LINE_NUMB;
+
 // Destructor
 editing_window::~editing_window() {
   //clearing up all of the used lines 
-  for(int i = 0; i<= 32767; ++i){
+  for(int i = 0; i<= MAX_LINE_NUMB; ++i){
       if(line_set[i]){
         delete [] linebuffer[i];
       }
@@ -83,7 +85,7 @@ int editing_window::get_line_number(char* input_line){
         result = last_usedline;
     }
     // checking if 
-    if(result >= 32767){
+    if(result >= MAX_LINE_NUMB){
         //TODO add a better way to deal with this error 
         result = 0;
         raise_error(3);
@@ -103,7 +105,7 @@ unsigned char* editing_window::get_linebuffer_line(int line_in_linebuffer){
     if(!line_set[line_in_linebuffer]){
         return nullptr;
     }
-    if(line_in_linebuffer >= 32767){
+    if(line_in_linebuffer >= MAX_LINE_NUMB){
         raise_error(3);
         return linebuffer[0];
     }

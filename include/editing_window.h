@@ -1,14 +1,16 @@
 #ifndef editing_window_h
 #define editing_window_h
 
+static const int MAX_LINE_NUMB =32767;
+
 class funktionstable;
 class variable_handling;
 
 class editing_window
 {
 private:
-    unsigned char **linebuffer;//[32767][120];//might have to optimize this cause this takes reserves a lot of memery should be around ~3-4 mbyte
-    bool line_set[32767];
+    unsigned char **linebuffer;//[32767][120];//might have to optimize this cause this takes reserves a lot of memery should be around ~3-4 mbyte 
+  bool line_set[MAX_LINE_NUMB];
     //values are abatrary 
     const char error_msgs[20][250]{
         "LINE TO LONG", 
@@ -34,8 +36,8 @@ public:
 
 inline editing_window::editing_window()
 {   
-    linebuffer = new unsigned char* [32767];
-    for(int i = 0; i <= 32767; i++){
+    linebuffer = new unsigned char* [MAX_LINE_NUMB];
+    for(int i = 0; i <= MAX_LINE_NUMB; i++){
         //linebuffer[i] = new unsigned char[120];  
         line_set[i] = false;
     }

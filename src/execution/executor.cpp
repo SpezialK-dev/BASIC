@@ -1,6 +1,7 @@
 #include "../../include/executor.h"
 #include "../../include/string_lib.h"
 #include <iterator>
+extern const int MAX_LINE_NUMB;
 
 executor::~executor() {
   delete[] current_variables;
@@ -72,7 +73,7 @@ void executor::execute(editing_window *window, funktionstable* funktable,variabl
             }
         }
         //just a safty precaution
-        if(current_line == 32766){
+        if(current_line == MAX_LINE_NUMB){
             break;
         }
         ++current_line;

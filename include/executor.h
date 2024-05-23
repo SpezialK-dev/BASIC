@@ -6,6 +6,7 @@ class b_var;
 #include "funktionstable.h"
 #include "variable_handling.h"
 
+
 class executor
 {
 private:
