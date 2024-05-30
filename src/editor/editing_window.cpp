@@ -113,6 +113,8 @@ unsigned char* editing_window::get_linebuffer_line(int line_in_linebuffer){
     return linebuffer[line_in_linebuffer];
 }
 
-void editing_window::end_editing_window(){
-    currently_running = false;
+void editing_window::end_editing_window() { currently_running = false; }
+
+bool editing_window::get_linebuffer_bool(int current_line_bufferline) {
+  return line_set[current_line_bufferline];
 }

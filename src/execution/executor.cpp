@@ -10,8 +10,16 @@ executor::~executor() {
 void executor::execute(editing_window *window, funktionstable* funktable,variable_handling* variables_table){
     bool running =true;
     while(running){
-        unsigned char *current_line_buffer = window->get_linebuffer_line(current_line);
-        for(int i = 0;current_line_buffer != nullptr && i< 120; ++i){
+      //safty precaution !
+      if(current_line == MAX_LINE_NUMB){
+	break; //this should safe a lot of execution code
+       }
+      unsigned char *current_line_buffer = window->get_linebuffer_line(current_line);
+	if(!window->get_linebuffer_bool(current_line)){
+	  ++current_line;
+	  continue;
+	}
+        for(int i = 0; i< 120; ++i){
             //code to loading the current line into the buffers
             if(current_line_buffer[i] == '\0'){
                 break;
@@ -72,10 +80,7 @@ void executor::execute(editing_window *window, funktionstable* funktable,variabl
                 break;
             }
         }
-        //just a safty precaution
-        if(current_line == MAX_LINE_NUMB){
-            break;
-        }
+        
         ++current_line;
     }
 }

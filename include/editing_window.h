@@ -31,7 +31,7 @@ public:
     editing_window();
   ~editing_window();
     void end_editing_window();
-    
+  bool get_linebuffer_bool(int line_in_linebuffer);
 };
 
 inline editing_window::editing_window()
