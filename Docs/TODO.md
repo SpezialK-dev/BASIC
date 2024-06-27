@@ -23,4 +23,5 @@ Hier kommen projekte weite verbesserungs ideen rein, welche die codebase aufräu
 - [ ] create a copy construcor / follow the rule of 5
 - [X]  convert all Types to enum types 
   - [X] fix executor to use new type system
-
+- [ ] fixing the invalid read, that i created recently
+- [ ] move the dynamic size creation to the copy do dyn buffer 
