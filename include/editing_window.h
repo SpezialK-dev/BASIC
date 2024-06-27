@@ -23,6 +23,7 @@ private:
   bool add_line(funktionstable *funkt_table,variable_handling* variables_table);
   int get_line_number(char* input_line);
   void copy_to_line_buffer(unsigned char* input, int position);
+  unsigned char* reduce_size(unsigned char * input_arr);
     
 public:
   void open_editor(funktionstable *funkt_table, variable_handling* variables_table);

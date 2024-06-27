@@ -1,6 +1,4 @@
 #include "../../include/executor.h"
-#include "../../include/string_lib.h"
-#include <iterator>
 extern const int MAX_LINE_NUMB;
 
 executor::~executor() {

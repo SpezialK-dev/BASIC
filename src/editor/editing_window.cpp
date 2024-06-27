@@ -37,11 +37,6 @@ bool editing_window::add_line(funktionstable* funkt_table, variable_handling* va
     input_arr[index-1] = '\0';
     //line number stuff
     current_line = get_line_number(input_arr);
-    //allocate the memmory 
-    if(!line_set[current_line]){
-        linebuffer[current_line] = new unsigned char[120];
-	line_set[current_line] = true;
-    }
     std::cout << current_line << ": " <<input_arr << std::endl;
     
     //tokenizer stuff
@@ -56,9 +51,9 @@ bool editing_window::add_line(funktionstable* funkt_table, variable_handling* va
         execution.execute(this, funkt_table,variables_table);
         std::cout << "END RUNNING CURRENT PROGRAM" << std::endl;
     }else{
-
+      
         //adding the tokenizer ouput to the final array
-        copy_to_line_buffer(outputarr, current_line);
+      copy_to_line_buffer(outputarr, current_line);
         line_set[current_line] = true;
         ++last_usedline; //TODO move to add to linebuffer
     }
@@ -94,12 +89,15 @@ int editing_window::get_line_number(char* input_line){
     return static_cast<int>(result);
 }
 void editing_window::copy_to_line_buffer(unsigned char* input, int position){
-    for(int i = 0; i< 256; ++i){
-        linebuffer[position][i] = input[i];
-        if(input[i] == '\0'){
-            break;
-        }
-    }
+
+  //free up old line to 
+  if(line_set[position]){
+    delete [] linebuffer[position];
+  }
+  line_set[position] = true;
+  unsigned char* to_save =reduce_size(input);
+  linebuffer[position] = to_save;
+  to_save = nullptr;
 }
 
 unsigned char* editing_window::get_linebuffer_line(int line_in_linebuffer){
@@ -117,4 +115,31 @@ void editing_window::end_editing_window() { currently_running = false; }
 
 bool editing_window::get_linebuffer_bool(int current_line_bufferline) {
   return line_set[current_line_bufferline];
+}
+
+//methode to only allocate as much as needed.
+//TODO move, into copy into linebuffer 
+
+unsigned char *editing_window::reduce_size(unsigned char *input) {
+  int new_lenght = 1;
+  // find  out the lenght manually since there is no way to do it with strlen(a type conversion could work but would be tedious)
+  while(new_lenght<255){
+    if(*(input+new_lenght) == '\0' ){
+      //std::cout<< "new reduced lenght" <<new_lenght << std::endl;
+      ++new_lenght;
+      break;
+    }
+    ++new_lenght;
+  }
+  //allocate new memory
+  unsigned char * ret_value = new unsigned char[new_lenght];
+  //copying the old values into the new array
+  for(int i = 0; i< new_lenght;++i ){
+    // prints out the index number of what is being copyied
+    //creates valgrind issue of invalid read 
+    //std::cout <<"input value " <<static_cast<int>(input[i]) << std::endl;
+    ret_value[i] = input[i];
+  }
+
+  return ret_value;
 }
